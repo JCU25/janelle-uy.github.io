@@ -31,8 +31,8 @@ const links = {
             Object.entries(links).map(([page, path]) => {
                 return (
                     <li id={page} class="h-full self-center flex">
-                        <a class="self-center" href={path}>
-                            {page}
+                        <a class="flex h-full" href={path}>
+                            <span class="self-center">{page}</span>
                         </a>
                     </li>
                 );
