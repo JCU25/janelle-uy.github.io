@@ -12,7 +12,10 @@ export default {
 				"dark-gray": "#454545",
 				black: "#181818",
 				"off-white": "#F6F6F6",
-				"light-gray": "#C0C0C0"
+				"light-gray": "#C0C0C0",
+				"dark-black": "#101010",
+				"light-black": "#272727"
+
 			}
 		},
 	},
