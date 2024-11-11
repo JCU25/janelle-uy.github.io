@@ -22,7 +22,7 @@ const links = {
             {
                 Object.entries(links).map(([icon, link]) => {
                     return (
-                        <li>
+                        <li class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md">
                             <a
                                 class="flex flex-row gap-3 align-center"
                                 href={link}
@@ -47,19 +47,31 @@ const links = {
                 </h2>
                 <ul class="w-full flex flex-col align-center gap-3">
                     <li class="w-full flex justify-center lg:justify-start">
-                        <a href="/">Home</a>
+                        <a
+                            class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                            href="/">Home</a
+                        >
                     </li><li
                         class="w-full flex justify-center lg:justify-start"
                     >
-                        <a href="/">Coding</a>
+                        <a
+                            class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                            href="/">Coding</a
+                        >
                     </li><li
                         class="w-full flex justify-center lg:justify-start"
                     >
-                        <a href="/">Designs</a>
+                        <a
+                            class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                            href="/">Designs</a
+                        >
                     </li><li
                         class="w-full flex justify-center lg:justify-start"
                     >
-                        <a href="/">About Me</a>
+                        <a
+                            class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                            href="/">About Me</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -70,15 +82,14 @@ const links = {
                 </h2>
                 <ul class="w-full flex flex-col align-center gap-3">
                     <li class="w-full flex justify-center lg:justify-start">
-                        <a href="/">Web Development</a>
+                        Web Development
+                    </li>
+                    <li class="w-full flex justify-center lg:justify-start">
+                        UI Design
                     </li><li
                         class="w-full flex justify-center lg:justify-start"
                     >
-                        <a href="/">UI Design</a>
-                    </li><li
-                        class="w-full flex justify-center lg:justify-start"
-                    >
-                        <a href="/">Database Design</a>
+                        Database Design
                     </li>
                 </ul>
             </div>
@@ -88,7 +99,9 @@ const links = {
                     Feel free to reach out for any queries. I’ll try my best to
                     help you!
                 </p>
-                <button class="bg-light-black px-6 py-2 rounded-md mt-10">
+                <button
+                    class="footer-button bg-light-black px-6 py-2 rounded-md mt-10"
+                >
                     Send me a message!
                 </button>
             </div>
@@ -102,4 +115,12 @@ const links = {
     </p>
 </footer>
 
-<style></style>
+<style>
+    .footer-button {
+        box-shadow: 8px 12px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+    .footer-button:hover {
+        background-color: #373737;
+        box-shadow: 8px 12px 10px 0 rgba(255, 255, 255, 0.3);
+    }
+</style>
