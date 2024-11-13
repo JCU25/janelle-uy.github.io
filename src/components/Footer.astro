@@ -24,11 +24,11 @@ const links = {
                     return (
                         <li class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md">
                             <a
-                                class="flex flex-row gap-3 align-center"
+                                class="flex flex-row gap-3 items-center"
                                 href={link}
                             >
                                 <img src={icon} alt="link" class="w-7 h-7" />
-                                <p class="self-center font-semibold">
+                                <p class="self-center text-sm font-semibold">
                                     {link.includes("https://www.")
                                         ? link.replace("https://www.", "")
                                         : link.replace("mailto:", "")}
@@ -48,31 +48,31 @@ const links = {
                     <h2 class="text-lg font-bold text-center lg:text-left">
                         Pages
                     </h2>
-                    <ul class="w-full flex flex-col align-center gap-3">
+                    <ul class="w-full flex flex-col items-center gap-3">
                         <li class="w-full flex justify-center lg:justify-start">
                             <a
-                                class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
                                 href="/">Home</a
                             >
                         </li><li
                             class="w-full flex justify-center lg:justify-start"
                         >
                             <a
-                                class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
                                 href="/">Coding</a
                             >
                         </li><li
                             class="w-full flex justify-center lg:justify-start"
                         >
                             <a
-                                class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
                                 href="/">Designs</a
                             >
                         </li><li
                             class="w-full flex justify-center lg:justify-start"
                         >
                             <a
-                                class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md"
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
                                 href="/">About Me</a
                             >
                         </li>
@@ -83,17 +83,21 @@ const links = {
                         Services
                     </h2>
                     <ul
-                        class="w-full flex flex-col justify-center align-center gap-4"
+                        class="w-full flex flex-col justify-center items-center gap-4"
                     >
                         <li class="w-full flex justify-center lg:justify-start">
-                            <span class="text-center">Web Development</span>
+                            <span class="text-center text-sm"
+                                >Web Development</span
+                            >
                         </li>
                         <li class="w-full flex justify-center lg:justify-start">
-                            <span class="text-center">UI Design</span>
+                            <span class="text-center text-sm">UI Design</span>
                         </li><li
                             class="w-full flex justify-center lg:justify-start"
                         >
-                            <span class="text-center">Database Design</span>
+                            <span class="text-center text-sm"
+                                >Database Design</span
+                            >
                         </li>
                     </ul>
                 </div>
