@@ -5,21 +5,25 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 <Layout title="Janelle Uy">
     <section
-        class="bg-dark-black justify-center flex flex-col justify-center gap-16 text-light-gray px-4"
+        class="bg-dark-black flex flex-col justify-center justify-center gap-16 text-light-gray px-4"
     >
-        <div class="inline-flex justify-center">
-            <h1 class="text-center text-3xl font-bold flex flex-col">
-                Hi I'm -
-                <span class="text-magenta text-6xl sm:text-8xl">
+        <div class="flex justify-center flex-col gap-3">
+            <h1 class="text-center text-3xl font-bold block">
+                Hi! I'm - <br />
+                <span
+                    class="inline-block text-magenta text-6xl sm:text-8xl border-b-8 p-0"
+                >
                     Janelle Uy.
                 </span>
-
-                <hr class="border-4 border-light-gray" />
-                <p>A software developer.</p>
             </h1>
+            <h2 class="text-center text-2xl sm:text-3xl font-bold">
+                A software developer.
+            </h2>
         </div>
 
-        <p class="text-center md:text-xl sm:w-3/4 md:w-1/2 self-center">
+        <p
+            class="hero-text text-center md:text-xl sm:w-3/4 md:w-1/2 self-center"
+        >
             If you need websites, applications or scripts to be developed or
             something you need help with, reach out to me!
         </p>
@@ -59,14 +63,19 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
                     class="self-center w-8 h-8"
                     src="/assets/mail-icon-vector.svg"
                     alt=""
-                /></a
-            >
+                />
+            </a>
         </div>
     </section>
 
     <style>
         section {
-            min-height: 90vh;
+            width: 100%;
+            height: 90vh;
+        }
+
+        .hero-text {
+            max-width: 750px;
         }
     </style>
 </Layout>
