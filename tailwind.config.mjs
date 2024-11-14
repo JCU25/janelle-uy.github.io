@@ -11,6 +11,7 @@ export default {
 				coral: "#FF7E7E",
 				"dark-gray": "#454545",
 				black: "#181818",
+				"pure-black": "#000000",
 				"off-white": "#F6F6F6",
 				"light-gray": "#C0C0C0",
 				"dark-black": "#101010",
