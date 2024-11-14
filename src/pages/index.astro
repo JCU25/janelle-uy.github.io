@@ -115,15 +115,17 @@ const TechList = [
         </di>
 
         <div
-            class="scroller bg-white bg-opacity-80 px-2 py-8 md:px-16 md:py-20"
+            class="scroller bg-white bg-opacity-80 px-2 py-8 md:px-16 md:py-20 overflow-x-auto flex items-center"
         >
-            <ul class="scroller_inner flex flex-wrap gap-6 md:gap-16">
+            <ul
+                class="scroller_inner flex flex-wrap justify-center gap-8 md:gap-16"
+            >
                 {
                     TechList.map((tech) => {
                         return (
                             <li>
                                 <img
-                                    class="h-10 max-w-36 md:h-28 m-auto flex-shrink-0"
+                                    class="h-14 max-w-36 md:h-20 m-auto "
                                     src={`/assets/tech-list/${tech}`}
                                     alt={tech
                                         .split("_")[1]
@@ -136,6 +138,23 @@ const TechList = [
                 }
             </ul>
         </div>
+
+        <script>
+            const scrollers = document.querySelectorAll(".scroller");
+            console.log("euu");
+            console.log(scrollers);
+            if (
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                addAnimation();
+            }
+
+            function addAnimation() {
+                scrollers.forEach((element) => {
+                    element.setAttribute("data-animated", "true");
+                });
+            }
+        </script>
     </section>
 
     <style>
@@ -148,10 +167,14 @@ const TechList = [
             max-width: 750px;
         }
 
-        .scroller {
+        .scroller[data-animated="true"] {
+            min-height: 200px;
+            max-height: 360px;
+            overflow-x: auto;
         }
 
-        .scroller_inner {
+        .scroller[data-animated="true"] .scroller_inner {
+            flex-wrap: nowrap;
         }
     </style>
 </Layout>
