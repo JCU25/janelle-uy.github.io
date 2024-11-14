@@ -1,6 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
+
+const TechList = [
+    "devicon_typescript.svg",
+    "logos_javascript.svg",
+    "logos_nodejs.svg",
+    "logos_express.svg",
+    "logos_python.svg",
+    "devicon_spring-wordmark.svg",
+    "logos_flutter.svg",
+    "devicon_dart-wordmark.svg",
+    "devicon_java-wordmark.svg",
+    "logos_git.svg",
+    "logos_mysql.svg",
+    "logos_mongodb.svg",
+    "logos_figma.svg",
+    "logos_astro.svg",
+    "devicon_react-wordmark.svg",
+    "logos_tailwindcss.svg",
+    "logos_headlessui.svg",
+    "devicon_bootstrap-wordmark.svg",
+    "logos_storyblok.svg",
+];
 ---
 
 <Layout title="Janelle Uy">
@@ -11,7 +33,7 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
             <h1 class="text-center text-3xl font-bold block">
                 Hi! I'm - <br />
                 <span
-                    class="inline-block text-magenta text-6xl sm:text-8xl border-b-8 p-0"
+                    class="inline-block text-magenta text-6xl sm:text-8xl pb-4 border-b-8 p-0"
                 >
                     Janelle Uy.
                 </span>
@@ -28,7 +50,7 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
             something you need help with, reach out to me!
         </p>
 
-        <div class="inline-flex self-center font-bold">
+        <div class="inline-flex self-center font-bold text-off-white">
             <a href="#contact-me" class="px-5 py-1"> Contact me </a>
 
             <button
@@ -68,14 +90,68 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
         </div>
     </section>
 
+    <section
+        class="h-screen text-light-gray bg-pure-black bg-opacity-80 py-28 px-4 md:px-28 md:py-32"
+    >
+        <h2
+            class="text-center text-off-white text-4xl md:text-5xl font-semibold"
+        >
+            <span class="inline border-b-4 border-magenta">MY PROJECTS</span>
+        </h2>
+    </section>
+
+    <section
+        class="text-light-gray bg-black flex flex-col gap-16 md:gap-28 py-28 md:py-32"
+    >
+        <di class="flex flex-col gap-7">
+            <h2
+                class="text-off-white font-bold text-4xl md:text-5xl text-center"
+            >
+                What I Use
+            </h2>
+            <p class="text-light-gray text-center text-sm md:text-base">
+                These are the languages, frameworks, and tools that I use:
+            </p>
+        </di>
+
+        <div
+            class="scroller bg-white bg-opacity-80 px-2 py-8 md:px-16 md:py-20"
+        >
+            <ul class="scroller_inner flex flex-wrap gap-6 md:gap-16">
+                {
+                    TechList.map((tech) => {
+                        return (
+                            <li>
+                                <img
+                                    class="h-10 max-w-36 md:h-28 m-auto flex-shrink-0"
+                                    src={`/assets/tech-list/${tech}`}
+                                    alt={tech
+                                        .split("_")[1]
+                                        .replace(".svg", "")
+                                        .replace("-", "")}
+                                />
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
+    </section>
+
     <style>
         section {
             width: 100%;
-            height: 90vh;
+            min-height: 90vh;
         }
 
         .hero-text {
             max-width: 750px;
+        }
+
+        .scroller {
+        }
+
+        .scroller_inner {
         }
     </style>
 </Layout>
