@@ -115,17 +115,17 @@ const TechList = [
         </di>
 
         <div
-            class="scroller bg-white bg-opacity-80 px-2 py-8 md:px-16 md:py-20 overflow-x-auto flex items-center"
+            class="scroller h-32 md:h-64 bg-white bg-opacity-80 px-2 md:px-16 overflow-x-auto flex items-center"
         >
             <ul
-                class="scroller_inner flex flex-wrap justify-center gap-8 md:gap-16"
+                class="scroller_inner h-full flex flex-wrap items-center gap-8 md:gap-16"
             >
                 {
                     TechList.map((tech) => {
                         return (
                             <li>
                                 <img
-                                    class="h-14 max-w-36 md:h-20 m-auto "
+                                    class="h-12 max-w-36 md:h-20 m-auto "
                                     src={`/assets/tech-list/${tech}`}
                                     alt={tech
                                         .split("_")[1]
@@ -141,8 +141,7 @@ const TechList = [
 
         <script>
             const scrollers = document.querySelectorAll(".scroller");
-            console.log("euu");
-            console.log(scrollers);
+
             if (
                 !window.matchMedia("(prefers-reduced-motion: reduce)").matches
             ) {
@@ -152,6 +151,16 @@ const TechList = [
             function addAnimation() {
                 scrollers.forEach((element) => {
                     element.setAttribute("data-animated", "true");
+
+                    const scrollerInner =
+                        document.querySelector(".scroller_inner");
+                    const scrollerContent = Array.from(scrollerInner!.children);
+
+                    scrollerContent.forEach((item) => {
+                        let duplicate = item.cloneNode(true) as HTMLElement;
+                        duplicate.setAttribute("aria-hidden", "true");
+                        scrollerInner?.appendChild(duplicate);
+                    });
                 });
             }
         </script>
@@ -170,11 +179,34 @@ const TechList = [
         .scroller[data-animated="true"] {
             min-height: 200px;
             max-height: 360px;
-            overflow-x: auto;
+            overflow-x: hidden;
         }
 
         .scroller[data-animated="true"] .scroller_inner {
+            display: flex;
             flex-wrap: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+
+        .scroller[data-animated="true"] .scroller_inner:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(
+                    calc(-50% - 1rem)
+                ); /* Start at original position */
+            }
+        }
+        @media (min-width: 768px) {
+            @keyframes scroll {
+                to {
+                    transform: translateX(
+                        calc(-50% - 2rem)
+                    ); /* Start at original position */
+                }
+            }
         }
     </style>
 </Layout>
