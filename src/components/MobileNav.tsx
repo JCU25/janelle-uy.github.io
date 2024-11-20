@@ -14,7 +14,7 @@ export default function MobileNav() {
             <MenuItems
                 transition
                 anchor="bottom end"
-                className="bg-gradient-to-r from-magenta to-navy-blue w-full text-white px-5  ">
+                className="bg-gradient-to-r from-dark-magenta to-navy-blue w-full text-white px-5  ">
                 <div className="flex flex-col gap-4 border-t border-light-gray py-3">
                     <MenuItem as="a" href="/">
                         Home
