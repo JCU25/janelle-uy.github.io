@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import ProjectTabs from "../components/ProjectTabs.tsx";
 
 const TechList = [
     "devicon_typescript.svg",
@@ -91,17 +92,21 @@ const TechList = [
     </section>
 
     <section
-        class="h-screen text-light-gray bg-pure-black bg-opacity-80 py-28 px-4 md:px-28 md:py-32"
+        class="h-screen text-light-gray bg-pure-black bg-opacity-90 py-28 px-4 md:px-28 md:py-32 flex flex-col gap-6"
     >
         <h2
             class="text-center text-off-white text-4xl md:text-5xl font-semibold"
         >
-            <span class="inline border-b-4 border-magenta">MY PROJECTS</span>
+            <span class="inline-block border-b-4 border-magenta"
+                >MY PROJECTS</span
+            >
         </h2>
+
+        <ProjectTabs client:load />
     </section>
 
     <section
-        class="disable-select text-light-gray bg-black flex flex-col gap-16 md:gap-28 py-28 md:py-32"
+        class="disable-select text-light-gray bg-dark-black flex flex-col gap-16 md:gap-28 py-28 md:py-32"
     >
         <di class="flex flex-col gap-7">
             <h2
