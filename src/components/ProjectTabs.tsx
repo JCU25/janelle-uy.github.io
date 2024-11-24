@@ -21,12 +21,6 @@ export default function ProjectTabs() {
         getProjects()
     }, [])
 
-    if (!projects) {
-        console.log('none pa')
-    } else {
-        console.log(projects)
-    }
-
 
     return (
         <>
@@ -35,12 +29,7 @@ export default function ProjectTabs() {
                 <TabList className="flex flex-row gap-6">
 
                     {
-                        (!projects) ? (
-                            <div>
-                                Loading...
-                            </div>
-
-                        ) : (Object.keys(projects!).map((category) => (
+                        (projects) && (Object.keys(projects!).map((category) => (
                             <Tab
                                 key={category}
                                 className={"px-6 py-1 rounded-lg data-[selected]:bg-gradient-to-r from-dark-magenta to-navy-blue data-[selected]:border data-[selected]:font-bold focus:outline-none data-[hover]:bg-dark-gray duration-75 "}
