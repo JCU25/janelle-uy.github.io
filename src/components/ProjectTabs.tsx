@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 export default function ProjectTabs() {
 
-    const [projects, setProjects] = useState<Record<string, Record<string, Record<string, string>>> | null>(null)
+    const [projects, setProjects] = useState<Record<string, Record<string, Record<string, any>>> | null>(null)
 
     useEffect(() => {
         const getProjects = async () => {
@@ -25,7 +25,7 @@ export default function ProjectTabs() {
     return (
         <>
             <TabGroup
-                className={"flex flex-col  items-center "}>
+                className={"flex flex-col  items-center h-full"}>
                 <TabList className="flex flex-row gap-6">
 
                     {
@@ -38,7 +38,7 @@ export default function ProjectTabs() {
                         )))
                     }
                 </TabList>
-                <TabPanels className={"mt-3"}>
+                <TabPanels className={"mt-3 bg-gradient-to-b from-dark-magenta/20 to-magenta-black/20 p-4 rounded-md w-full"}>
 
                     {
 
@@ -49,13 +49,31 @@ export default function ProjectTabs() {
                                 Object.entries(projects).map(([projectName, details]) => (
 
                                     < TabPanel
+                                        className="bg-top bg-center bg-black group bg-opacity-0 hover:bg-opacity-80 transition-all duration-250"
+
+                                        style={{
+                                            backgroundImage: `url(${details.img})`,
+                                            backgroundBlendMode: "multiply",
+
+                                            minWidth: "400px",
+                                            maxWidth: "850px",
+                                            minHeight: "300px",
+                                            height: "740px",
+                                            borderRadius: "10px"
+                                        }}
+                                        as='div'
                                         key={projectType}
                                     >
-                                        <h3>{projectName}</h3>
-                                        <p>
-                                            {details.description}
-                                            {details.img}
-                                        </p>
+                                        <div
+                                            className='opacity-0 group-hover:opacity-100 text-light-gray'>
+                                            <h3>{projectName}</h3>
+                                            <p>
+                                                {details.description}
+                                                {details.img}
+                                            </p>
+                                        </div>
+
+                                        {/* <img src={details.img} alt={projectName} /> */}
                                     </TabPanel>
                                 ))
                             ))
