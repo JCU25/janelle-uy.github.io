@@ -6,6 +6,7 @@ export default {
 			colors: {
 				"dark-magenta": "#9E05C4",
 				magenta: "#BB37DC",
+				"magenta-black": "#2F053A",
 				purple: "#844BFF",
 				"navy-blue": "#065F91",
 				coral: "#FF7E7E",
