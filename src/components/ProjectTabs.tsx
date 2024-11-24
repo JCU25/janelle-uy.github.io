@@ -38,45 +38,80 @@ export default function ProjectTabs() {
                         )))
                     }
                 </TabList>
-                <TabPanels className={"mt-3 bg-gradient-to-b from-dark-magenta/20 to-magenta-black/20 p-4 rounded-md w-full"}>
+                <TabPanels
+                    className={"mt-3 bg-gradient-to-b from-dark-magenta/20 to-magenta-black/20 p-4 rounded-md w-full grid"}
+                >
 
                     {
-
                         (!projects) ? (
-                            <div>Loading...</div>
-                        ) :
-                            Object.entries(projects).map(([projectType, projects]) => (
-                                Object.entries(projects).map(([projectName, details]) => (
+                            <p className='text-center'>Loading...</p>
+                        ) : (
+                            Object.entries(projects).map(([category, projects]) => (
+                                <TabPanel
+                                    className={`grid gap-3`}
+                                    key={category}>
+                                    {
+                                        Object.entries(projects).map(([projectName, details]) => (
 
-                                    < TabPanel
-                                        className="bg-top bg-center bg-black group bg-opacity-0 hover:bg-opacity-80 transition-all duration-250"
+                                            < div
+                                                className="bg-top bg-center bg-black group bg-opacity-0 hover:bg-opacity-80 transition-all duration-250
+                                                    p-8 md:p-12 lg:p-20 bg-no-repeat bg-cover"
 
-                                        style={{
-                                            backgroundImage: `url(${details.img})`,
-                                            backgroundBlendMode: "multiply",
+                                                style={{
+                                                    backgroundImage: `url(${details.img})`,
+                                                    backgroundBlendMode: "multiply",
+                                                    height: "700px",
+                                                    borderRadius: "10px"
+                                                }}
+                                            >
+                                                <div
+                                                    className='h-full opacity-0 group-hover:opacity-100 text-light-gray flex flex-col gap-7'>
+                                                    <h3
+                                                        className='text-off-white font-bold text-2xl'
+                                                    >{projectName}</h3>
 
-                                            minWidth: "400px",
-                                            maxWidth: "850px",
-                                            minHeight: "300px",
-                                            height: "740px",
-                                            borderRadius: "10px"
-                                        }}
-                                        as='div'
-                                        key={projectType}
-                                    >
-                                        <div
-                                            className='opacity-0 group-hover:opacity-100 text-light-gray'>
-                                            <h3>{projectName}</h3>
-                                            <p>
-                                                {details.description}
-                                                {details.img}
-                                            </p>
-                                        </div>
+                                                    <div className='flex flex-col gap-0 font-semibold text-off-white '>
 
-                                        {/* <img src={details.img} alt={projectName} /> */}
-                                    </TabPanel>
-                                ))
+                                                        {
+                                                            // ensure details.roles is an array and is not empty
+                                                            Array.isArray(details.roles) && (details.roles.length > 0) ? (
+                                                                details.roles.map((role, index) => (
+                                                                    <h4 className='text-sm md:text-base' key={index}>{role}</h4>
+                                                                ))
+                                                            ) : (
+                                                                <h4>no roles</h4>
+                                                            )
+                                                        }
+                                                    </div>
+
+                                                    <div
+                                                        className='flex flex-col gap-2'>
+                                                        <h4 className='font-semibold text-off-white text-xl'>About the project</h4>
+                                                        <p className='text-sm md:text-base'>
+                                                            {details.description}
+                                                        </p>
+                                                    </div>
+
+
+                                                    <div
+                                                        className='flex flex-col gap-2 overflow-hidden'>
+                                                        <h4 className='font-semibold text-off-white text-xl'>Contributions</h4>
+                                                        <ul className='list-disc list-inside overflow-y-scroll text-sm md:text-base'>
+                                                            {Array.isArray(details.details) && (details.details.length > 0) && (
+                                                                details.details.map((contribution) => (
+                                                                    <li >{contribution}</li>
+                                                                ))
+                                                            )}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+
+                                </TabPanel>
                             ))
+                        )
                     }
                 </TabPanels>
             </TabGroup >
