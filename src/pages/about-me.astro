@@ -10,7 +10,8 @@ import Layout from "../layouts/Layout.astro";
             class="w-full md:w-2/5 bg-white/10 p-8 flex flex-col gap-8 rounded-xl"
         >
             <h1 class="text-4xl flex justify-center">
-                <span class="flex flex-col gap-3 text-white"
+                <span
+                    class="flex font-semibold flex-col gap-3 inline-block text-transparent bg-gradient-to-r from-magenta to-fuchsia bg-clip-text"
                     >About Me
 
                     <hr
@@ -22,7 +23,7 @@ import Layout from "../layouts/Layout.astro";
                 </span>
             </h1>
             <div class="w-full flex justify-center">
-                <ul class="flex flex-col">
+                <ul class="flex flex-col list-disc list-inside text-white">
                     <li><a href="#intro"> Intro </a></li>
                     <li>
                         <a href="#hobbiesNinterests"> Hobbies & Interests </a>
@@ -30,14 +31,10 @@ import Layout from "../layouts/Layout.astro";
                 </ul>
             </div>
         </div>
-        <div class="w-full flex-grow flex flex-col py-8 md:px-16 gap-10">
+        <div class="w-full flex-grow flex flex-col py-8 md:px-16">
             <div id="intro" class="flex flex-col gap-6 py-6">
                 <h2 class="text-3xl">
-                    <span
-                        class="inline-block text-transparent bg-gradient-to-r from-magenta to-fuchsia bg-clip-text"
-                    >
-                        Intro
-                    </span>
+                    <span class="inline-block text-white"> Intro </span>
                 </h2>
                 <p>
                     Hi! I am Janelle, a graduate of Mapua Malayan Colleges
@@ -51,9 +48,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div id="hobbiesNinterests" class="flex flex-col gap-6 py-6">
                 <h2 class="text-3xl">
-                    <span
-                        class="inline-block text-transparent bg-gradient-to-r from-magenta to-fuchsia bg-clip-text"
-                    >
+                    <span class="inline-block text-white">
                         Hobbies & Interests
                     </span>
                 </h2>
