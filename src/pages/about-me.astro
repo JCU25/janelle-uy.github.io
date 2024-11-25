@@ -2,155 +2,83 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About Me">
-    <section>
-        <h1>
-            <span class="separator header-accent">learn more</span>
-            <br />
-            <span class="separator">ABOUT ME</span>
-        </h1>
+<Layout title="About Janelle Uy">
+    <section
+        class="p-4 md:p-16 lg:p-28 flex flex-col md:flex-row bg-black text-light-gray"
+    >
+        <div
+            class="w-full md:w-2/5 bg-white/10 p-8 flex flex-col gap-8 rounded-xl"
+        >
+            <h1 class="text-4xl flex justify-center">
+                <span class="flex flex-col gap-3 text-white"
+                    >About Me
 
-        <div class="details">
-            <p>
-                Hi! I am <span class="accent-color accent-text">Janelle</span>,
-                and I am a full-stack developer.
-            </p>
-
-            <p>
-                Other than that, I also love learning about
-                <span class="accent-color">
-                    robotics, and UI/UX design, and DevOps!
+                    <hr
+                        style={{
+                            height: "1px",
+                        }}
+                        class="bg-gradient-to-r from-magenta to-fuchsia border-0"
+                    />
                 </span>
-                My love for robotics was discovered during my 12th grade in SHS,
-                when we were taught Arduino during our robotoics class by a great
-                teacher! That was also my first experience with coding! I got interested
-                in UI/UX design in the late 2023; and my interest in DevOps was piqued
-                by my experience with handling and maintaining the OCP website!
-            </p>
-
-            <p>
-                Some of my hobbies include playing the piano and reading! I read
-                books, webtoons, manga, manhwa/manhua, too. A favorite of mine
-                is the Remarried Empress!
-            </p>
-
-            <p>
-                I also love <span class="accent-color">art</span>, and <span
-                    class="accent-color">video games</span
-                >! ❤
-            </p>
+            </h1>
+            <div class="w-full flex justify-center">
+                <ul class="flex flex-col">
+                    <li><a href="#intro"> Intro </a></li>
+                    <li>
+                        <a href="#hobbiesNinterests"> Hobbies & Interests </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full flex-grow flex flex-col py-8 md:px-16 gap-10">
+            <div id="intro" class="flex flex-col gap-6 py-6">
+                <h2 class="text-3xl">
+                    <span
+                        class="inline-block text-transparent bg-gradient-to-r from-magenta to-fuchsia bg-clip-text"
+                    >
+                        Intro
+                    </span>
+                </h2>
+                <p>
+                    Hi! I am Janelle, a graduate of Mapua Malayan Colleges
+                    Mindanao. I am an aspiring full-stack developer interested
+                    in programming, robotics, and designing. I graduated Summa
+                    Cum Laude, and at the top of all Computer Science students
+                    last September 27, 2024. This really came as a surprise
+                    since there were a lot of smart students in my class, and I
+                    never expected this result; it made me very happy!
+                </p>
+            </div>
+            <div id="hobbiesNinterests" class="flex flex-col gap-6 py-6">
+                <h2 class="text-3xl">
+                    <span
+                        class="inline-block text-transparent bg-gradient-to-r from-magenta to-fuchsia bg-clip-text"
+                    >
+                        Hobbies & Interests
+                    </span>
+                </h2>
+                <p class="">
+                    My hobbies include sketching, painting, playing video games,
+                    playing the piano, and reading! I like sketching figures,
+                    and making still-life art with watercolor and gouache. Some
+                    of my favorite video games include Ori and the Will of the
+                    Wisps (I cried my heart out!), Tales of Berseria (this
+                    too!), and Witcher 3 (I still haven’t finished the game
+                    though after so long)!! I was trained as a classical pianist
+                    since 2009 until 2020 by two beloved teachers. I am now out
+                    of practice, but I am trying to make time to regain my
+                    skills! Some of my favorite pieces are Fantasie Impromptu (I
+                    haven’t learned it yet), and Hungarian Rhapsody (this was
+                    supposed to be my recital piece last 2020 but pandemic
+                    struck!). I love reading good novels basically from any
+                    genre as long as I find it to have good pacing, decent plot,
+                    a good surprise element (this is optional, as long as the
+                    entire book is good!). I also love reading webtoons and
+                    manhua/manhwa with good plots and drama!
+                </p>
+            </div>
         </div>
     </section>
 </Layout>
 
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Qwitcher+Grypen:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
-    h1 {
-        text-align: center;
-        margin: 10% 0;
-    }
-
-    .separator {
-        font-size: 60px;
-        font-family: "Raleway", sans-serif;
-        font-weight: 400;
-    }
-
-    .header-accent {
-        font-family: "Qwitcher Grypen", cursive;
-        margin-left: -20%;
-    }
-
-    p {
-        font-size: 27px;
-        color: #000000;
-        font-weight: 400;
-        font-family: "Manrope", sans-serif;
-
-        margin-top: 6%;
-    }
-
-    section {
-        margin: 0 15%;
-    }
-
-    .accent-color {
-        color: #90420a;
-    }
-
-    .accent-text {
-        font-weight: 700;
-    }
-
-    /* FOR MOBILE VIEW */
-    @media screen and (max-width: 1200px) {
-        h1 {
-            text-align: center;
-            margin: 50px 0;
-        }
-        .separator {
-            font-size: 45px;
-            font-family: "Raleway", sans-serif;
-            font-weight: 400;
-        }
-        .header-accent {
-            font-family: "Qwitcher Grypen", cursive;
-            margin-left: -30%;
-        }
-
-        p {
-            font-size: 18px;
-            color: #000000;
-            font-weight: 400;
-            font-family: "Manrope", sans-serif;
-            margin-top: 5%;
-        }
-
-        section {
-            margin: 0 15%;
-        }
-
-        .accent-color {
-            color: #90420a;
-        }
-
-        .accent-text {
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        h1 {
-            text-align: center;
-            margin: 90px auto 0 auto;
-        }
-        .separator {
-            font-size: 40px;
-            font-family: "Manrope", sans-serif;
-            font-weight: 400;
-        }
-        .header-accent {
-            font-family: "Qwitcher Grypen", cursive;
-            margin-left: -70%;
-        }
-
-        p {
-            font-size: 18px;
-            color: #000000;
-            font-weight: 400;
-            font-family: "Manrope", sans-serif;
-            margin-top: 15%;
-        }
-
-        section {
-            margin: 0 15%;
-        }
-
-        .accent-color {
-            color: #90420a;
-        }
-
-        .accent-text {
-        }
-    }
-</style>
+<style></style>
