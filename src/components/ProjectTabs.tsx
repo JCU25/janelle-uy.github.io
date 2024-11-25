@@ -5,6 +5,14 @@ export default function ProjectTabs() {
 
     const [projects, setProjects] = useState<Record<string, Record<string, Record<string, any>>> | null>(null)
     const [openDialog, setOpenDialog] = useState("")
+    const [isMd, setIsMd] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMd(window.innerWidth >= 768)
+        }
+        handleResize();
+    }, [])
 
     useEffect(() => {
         const getProjects = async () => {
@@ -64,6 +72,7 @@ export default function ProjectTabs() {
                                                     style={{
                                                         backgroundImage: `url(${project.img})`,
                                                         backgroundBlendMode: "multiply",
+                                                        height: isMd ? "700px" : "384px",
                                                         borderRadius: "10px"
                                                     }}
                                                 >
