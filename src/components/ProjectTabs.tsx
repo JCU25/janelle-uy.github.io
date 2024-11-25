@@ -121,22 +121,23 @@ export default function ProjectTabs() {
 
                                                         <div
                                                             className='flex flex-col gap-2 overflow-hidden'>
-                                                            <h4 className='font-semibold text-off-white text-xl'>Contributions</h4>
+                                                            {/* <h4 className='font-semibold text-off-white text-xl'>Contributions</h4>
                                                             <ul className='list-disc list-inside overflow-y-scroll text-sm md:text-base'>
                                                                 {Array.isArray(project.details) && (project.details.length > 0) && (
                                                                     project.details.map((contribution) => (
                                                                         <li >{contribution}</li>
                                                                     ))
                                                                 )}
-                                                            </ul>
+                                                            </ul> */}
+                                                            <p className='text-purple'>Click to see contributions</p>
                                                         </div>
                                                     </div>
                                                 </Button>
 
-                                                <Dialog open={openDialog === projectName} onClose={() => setOpenDialog("")} className={` z-50`}>
+                                                <Dialog open={openDialog === projectName} onClose={() => setOpenDialog("")} className={`z-50`}>
                                                     <DialogBackdrop className="fixed inset-0 bg-pure-black/65" />
 
-                                                    <div className='fixed inset-0 flex md:m-16 py-4 md:py-8 text-light-gray bg-pure-black/90 rounded-3xl overflow-hidden overflow-y-scroll'>
+                                                    <div className='fixed inset-0 flex md:my-6 md:mx-16 py-4 md:py-8 text-light-gray bg-pure-black/90 rounded-3xl overflow-hidden overflow-y-scroll'>
 
                                                         <DialogPanel className={`relative w-full h-full flex flex-col gap-12 pb-8 px-8 md:px-16`}>
                                                             <button className=' fixed right-8 md:right-28 p-4 w-min bg-white/10 rounded-md' onClick={() => setOpenDialog("")}>
