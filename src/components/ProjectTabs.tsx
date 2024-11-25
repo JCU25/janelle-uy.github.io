@@ -86,7 +86,7 @@ export default function ProjectTabs() {
                                                     style={{
                                                         backgroundImage: `url(${project.img})`,
                                                         backgroundBlendMode: "multiply",
-                                                        height: isMd ? "700px" : "384px",
+                                                        height: isMd ? "600px" : "384px",
                                                         borderRadius: "10px"
                                                     }}
                                                 >
