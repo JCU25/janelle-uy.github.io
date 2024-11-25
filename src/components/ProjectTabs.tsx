@@ -30,6 +30,20 @@ export default function ProjectTabs() {
         getProjects()
     }, [])
 
+    useEffect(() => {
+        if (openDialog) {
+            window.history.pushState({ openDialog: true }, "", window.location.href);
+        }
+
+        const handlePopState = (event: PopStateEvent) => {
+            if (event.state?.openDialog) {
+                setOpenDialog("");
+            }
+        }
+
+        window.addEventListener("popstate", handlePopState)
+    }, [openDialog])
+
 
     return (
         <>
