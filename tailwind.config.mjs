@@ -7,7 +7,7 @@ export default {
 				"dark-magenta": "#9E05C4",
 				magenta: "#BB37DC",
 				"magenta-black": "#2F053A",
-				purple: "#844BFF",
+				purple: "#CABCFF",
 				"navy-blue": "#065F91",
 				coral: "#FF7E7E",
 				"dark-gray": "#454545",
@@ -16,7 +16,8 @@ export default {
 				"off-white": "#F6F6F6",
 				"light-gray": "#C0C0C0",
 				"dark-black": "#101010",
-				"light-black": "#272727"
+				"light-black": "#272727",
+				fuchsia: "#FF7E7E"
 
 			}
 		},
