@@ -19,10 +19,10 @@ export default function MobileNav() {
                     <MenuItem as="a" href="/">
                         Home
                     </MenuItem>
-                    <MenuItem as="a" href="/coding">
+                    <MenuItem as="a" href="/#coding">
                         Coding Projects
                     </MenuItem>
-                    <MenuItem as="a" href="/">
+                    <MenuItem as="a" href="/#design">
                         Designs
                     </MenuItem>
                     <MenuItem as="a" href="/about-me">
