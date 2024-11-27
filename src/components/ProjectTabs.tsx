@@ -48,7 +48,7 @@ export default function ProjectTabs() {
     return (
         <>
             <TabGroup
-                className={"flex flex-col  items-center h-full"}>
+                className={"flex flex-col items-center h-full gap-3 mt-3 md:mt-5"}>
                 <TabList className="flex flex-row gap-6">
 
                     {
