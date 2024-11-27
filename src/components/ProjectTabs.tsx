@@ -143,6 +143,8 @@ export default function ProjectTabs() {
                                                             </ul>
                                                             <p className='text-purple'>Click to see contributions</p>
                                                         </div> */}
+
+                                                        <p className='text-purple'>Click to see contributions</p>
                                                     </div>
                                                 </Button>
 
