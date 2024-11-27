@@ -77,7 +77,7 @@ export default function ProjectTabs() {
                                         display: "grid",
                                         gap: "12px",
                                         gridTemplateColumns: "repeat(4, 1fr)", // # of cols and col size
-                                        gridAutoRows: "369px", // Row height
+                                        gridAutoRows: "310px", // Row height
 
 
                                     }}
