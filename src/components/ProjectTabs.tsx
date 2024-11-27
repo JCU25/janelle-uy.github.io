@@ -55,14 +55,15 @@ export default function ProjectTabs() {
                         (projects) && (Object.keys(projects!).map((category) => (
                             <Tab
                                 key={category}
-                                className={"px-6 py-1 rounded-lg data-[selected]:bg-gradient-to-r from-dark-magenta to-navy-blue data-[selected]:border data-[selected]:font-bold focus:outline-none data-[hover]:bg-dark-gray duration-75 "}
+                                id={category}
+                                className={"px-6 py-1 rounded-lg data-[selected]:bg-gradient-to-r text-white from-dark-magenta to-navy-blue data-[selected]:border data-[selected]:font-bold focus:outline-none data-[hover]:bg-dark-gray duration-75 "}
 
                             >{category[0].toUpperCase() + category.slice(1)}</Tab>
                         )))
                     }
                 </TabList>
                 <TabPanels
-                    className={"mt-3 bg-gradient-to-b from-dark-magenta/20 to-magenta-black/20 p-4 rounded-md w-full grid"}
+                    className={"mt-3 bg-gradient-to-b from-dark-magenta/10 to-magenta-black/20 p-4 rounded-md w-full"}
                 >
 
                     {
@@ -71,8 +72,17 @@ export default function ProjectTabs() {
                         ) : (
                             Object.entries(projects).map(([category, projects]) => (
                                 <TabPanel
-                                    className={`grid gap-3`}
-                                    key={category}>
+                                    className={`grid gap-6 md:grid-cols-4 grid-rows-none`}
+                                    style={{
+                                        display: "grid",
+                                        gap: "12px",
+                                        gridTemplateColumns: "repeat(4, 1fr)", // # of cols and col size
+                                        gridAutoRows: "369px", // Row height
+
+
+                                    }}
+                                    key={category}
+                                >
                                     {
                                         Object.entries(projects).map(([projectName, project]) => (
 
@@ -80,18 +90,20 @@ export default function ProjectTabs() {
                                                 < Button
                                                     onClick={() => setOpenDialog(projectName)}
                                                     as='div'
-                                                    className="bg-top bg-center bg-black group bg-opacity-0 md:hover:bg-opacity-80 transition-all duration-250
-                                                    p-8 md:p-12 lg:p-20 bg-no-repeat bg-cover h-96 "
+                                                    className="bg-top bg-center bg-black group bg-opacity-0 md:hover:bg-opacity-90 transition-all duration-250
+                                                    p-8 bg-no-repeat bg-cover border border-dark-magenta/50 hover:border-magenta duration-500"
 
                                                     style={{
                                                         backgroundImage: `url(${project.img})`,
                                                         backgroundBlendMode: "multiply",
-                                                        height: isMd ? "600px" : "384px",
-                                                        borderRadius: "10px"
+                                                        borderRadius: "10px",
+                                                        gridColumn: `span ${isMd ? (project.displaySize?.cols || 1) : 4}`,
+                                                        gridRow: `span ${isMd ? (project.displaySize?.rows || 1) : 1}`,
                                                     }}
                                                 >
+
                                                     <div
-                                                        className='h-full opacity-0 md:group-hover:opacity-100 text-light-gray flex flex-col gap-7'>
+                                                        className='h-full opacity-0 md:group-hover:opacity-100 text-light-gray flex flex-col gap-7 duration-500'>
                                                         <h3
                                                             className='text-off-white font-bold text-2xl'
                                                         >{projectName}</h3>
@@ -119,18 +131,18 @@ export default function ProjectTabs() {
                                                         </div>
 
 
-                                                        <div
+                                                        {/* <div
                                                             className='flex flex-col gap-2 overflow-hidden'>
-                                                            {/* <h4 className='font-semibold text-off-white text-xl'>Contributions</h4>
+                                                            <h4 className='font-semibold text-off-white text-xl'>Contributions</h4>
                                                             <ul className='list-disc list-inside overflow-y-scroll text-sm md:text-base'>
                                                                 {Array.isArray(project.details) && (project.details.length > 0) && (
                                                                     project.details.map((contribution) => (
                                                                         <li >{contribution}</li>
                                                                     ))
                                                                 )}
-                                                            </ul> */}
+                                                            </ul>
                                                             <p className='text-purple'>Click to see contributions</p>
-                                                        </div>
+                                                        </div> */}
                                                     </div>
                                                 </Button>
 
