@@ -103,7 +103,7 @@ export default function ProjectTabs() {
                                                 >
 
                                                     <div
-                                                        className='h-full opacity-0 md:group-hover:opacity-100 text-light-gray flex flex-col gap-7 duration-500'>
+                                                        className='h-full opacity-0 md:group-hover:opacity-100 text-light-gray flex flex-col gap-4 duration-500'>
                                                         <h3
                                                             className='text-off-white font-bold text-2xl'
                                                         >{projectName}</h3>
@@ -114,7 +114,7 @@ export default function ProjectTabs() {
                                                                 // ensure project.roles is an array and is not empty
                                                                 Array.isArray(project.roles) && (project.roles.length > 0) ? (
                                                                     project.roles.map((role, index) => (
-                                                                        <h4 className='text-sm md:text-base' key={index}>{role}</h4>
+                                                                        <h4 className='text-sm' key={index}>{role}</h4>
                                                                     ))
                                                                 ) : (
                                                                     <h4>no roles</h4>
@@ -124,7 +124,7 @@ export default function ProjectTabs() {
 
                                                         <div
                                                             className='flex flex-col gap-2'>
-                                                            <h4 className='font-semibold text-off-white text-xl'>About the project</h4>
+                                                            <h4 className='font-semibold text-off-white text-lg'>About the project</h4>
                                                             <p className='text-sm md:text-base'>
                                                                 {project.description}
                                                             </p>
@@ -144,7 +144,7 @@ export default function ProjectTabs() {
                                                             <p className='text-purple'>Click to see contributions</p>
                                                         </div> */}
 
-                                                        <p className='text-purple'>Click to see contributions</p>
+                                                        <p className='text-purple text-md'>Click to see contributions</p>
                                                     </div>
                                                 </Button>
 
@@ -154,11 +154,13 @@ export default function ProjectTabs() {
                                                     <div className='fixed inset-0 flex md:my-6 md:mx-16 py-4 md:py-8 text-light-gray bg-pure-black/90 rounded-3xl overflow-hidden overflow-y-scroll'>
 
                                                         <DialogPanel className={`relative w-full h-full flex flex-col gap-12 pb-8 px-8 md:px-16`}>
-                                                            <button className=' fixed right-8 md:right-28 p-4 w-min bg-white/10 rounded-md' onClick={() => setOpenDialog("")}>
+                                                            <button onClick={() => setOpenDialog("")} className='hidden md:block fixed top-16 md:top-20 right-4 md:right-28 p-4 w-min bg-white/10 rounded-md hover:bg-white/20 ease-in'>
                                                                 &#x2715;
                                                             </button>
 
-                                                            <img src={project.img} alt={`a screenshot of ${projectName}`} className='w-full md:w-auto max-h-96 rounded mx-auto mt-16 md:mt-10' />
+                                                            <img src={project.img}
+                                                                alt={`a screenshot of ${projectName}`}
+                                                                className='w-full md:w-auto max-h-96 rounded mx-auto mt-20 md:mt-10' />
 
                                                             <div className='flex flex-col gap-12 pb-16'>
 
