@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
         class="p-4 md:p-16 lg:p-28 flex flex-col md:flex-row bg-black text-light-gray"
     >
         <div
-            class="w-full md:w-2/5 bg-white/10 p-8 flex flex-col gap-8 rounded-xl"
+            class="w-full md:w-2/5 bg-white/10 p-8 mt-20 md:mt-0 flex flex-col gap-8 rounded-xl"
         >
             <h1 class="text-4xl flex justify-center">
                 <span
@@ -23,8 +23,14 @@ import Layout from "../layouts/Layout.astro";
                 </span>
             </h1>
             <div class="w-full flex justify-center">
-                <ul class="flex flex-col list-disc list-inside text-white">
-                    <li><a href="#intro"> Intro </a></li>
+                <ul
+                    class="flex flex-col list-disc list-inside text-white gap-3"
+                >
+                    <li>
+                        <a class="inline-block hover:border-b" href="#intro">
+                            Intro
+                        </a>
+                    </li>
                     <li>
                         <a href="#hobbiesNinterests"> Hobbies & Interests </a>
                     </li>
