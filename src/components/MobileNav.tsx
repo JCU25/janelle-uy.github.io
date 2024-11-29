@@ -1,6 +1,5 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
-import React from "react";
 
 
 export default function MobileNav() {
@@ -14,7 +13,7 @@ export default function MobileNav() {
             <MenuItems
                 transition
                 anchor="bottom end"
-                className="bg-gradient-to-r from-dark-magenta to-navy-blue w-full text-white px-5  ">
+                className="bg-gradient-to-r from-dark-magenta to-navy-blue w-full text-white px-5 border-b shadow-md">
                 <div className="flex flex-col gap-4 border-t border-light-gray py-3">
                     <MenuItem as="a" href="/">
                         Home
