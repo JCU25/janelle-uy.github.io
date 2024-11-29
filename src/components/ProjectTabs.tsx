@@ -91,13 +91,13 @@ export default function ProjectTabs() {
                                                     onClick={() => setOpenDialog(projectName)}
                                                     as='div'
                                                     className="bg-top bg-center bg-black group bg-opacity-0 md:hover:bg-opacity-90 transition-all duration-250
-                                                    p-8 bg-no-repeat bg-cover border border-dark-magenta/50 hover:border-magenta duration-500"
+                                                    p-8 bg-no-repeat bg-cover border border-dark-magenta/50 hover:border-magenta duration-500 overflow-hidden"
 
                                                     style={{
                                                         backgroundImage: `url(${project.img})`,
                                                         backgroundBlendMode: "multiply",
                                                         borderRadius: "10px",
-                                                        gridColumn: `span ${isMd ? (project.displaySize?.cols || 1) : 4}`,
+                                                        gridColumn: `span ${(isMd) ? (project.displaySize?.cols || 1) : 4}`,
                                                         gridRow: `span ${isMd ? (project.displaySize?.rows || 1) : 1}`,
                                                     }}
                                                 >
