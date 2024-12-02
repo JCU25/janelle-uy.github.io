@@ -3,8 +3,9 @@ import { Bars3Icon } from "@heroicons/react/20/solid";
 import MobileNav from "./MobileNav";
 const links = {
     Home: "/",
-    Coding: "/#coding",
-    Designs: "/#design",
+    // Coding: "/#coding",
+    // Designs: "/#design",
+    Projects: "/#projects",
     "BY THE WAY!!": "/about-me",
 };
 ---
@@ -43,8 +44,11 @@ const links = {
 
 <script>
     const home: HTMLElement | null = document.getElementById("Home");
-    const projects: HTMLElement | null = document.getElementById("projets");
-    const about_me: HTMLElement | null = document.getElementById("about-me");
+    const coding: HTMLElement | null = document.getElementById("Coding");
+    const design: HTMLElement | null = document.getElementById("Design");
+    const projects: HTMLElement | null = document.getElementById("Projects");
+    const about_me: HTMLElement | null =
+        document.getElementById("BY THE WAY!!");
 
     // text decoration when "Home" is selected
     if (window.location.pathname == "/") {
@@ -52,25 +56,28 @@ const links = {
             home.style.borderBottom = "2px solid white";
         }
     }
-
     // text decoration when "Projects" is selected
-    if (
-        window.location.pathname == "/projects" ||
-        window.location.pathname == "/projects/"
-    ) {
-        if (projects) {
-            projects.style.textDecoration = "underline";
-        }
+    if (window.location.hash == "#projects") {
+        console.log("projects");
+        if (home) home.style.borderBottom = "none";
+        if (projects) projects.style.borderBottom = "2px solid white";
     }
 
-    // text decoration when "About Me" is selected
+    // if (
+    //     window.location.hash === "#coding" ||
+    //     window.location.hash == "/#coding/"
+    // ) {
+    //     console.log("ey");
+    //     if (home) home.style.borderBottom = "none";
+    //     if (coding) coding!.style.borderBottom = "2px solid white";
+    // }
+
+    // text decoration when "BY THE WAY!!" is selected
     if (
         window.location.pathname == "/about-me" ||
         window.location.pathname == "/about-me/"
     ) {
-        if (about_me) {
-            about_me.style.textDecoration = "underline";
-        }
+        if (about_me) about_me.style.borderBottom = "2px solid white";
     }
 </script>
 
