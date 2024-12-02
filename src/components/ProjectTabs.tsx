@@ -55,7 +55,7 @@ export default function ProjectTabs() {
                         (projects) && (Object.keys(projects!).map((category) => (
                             <Tab
                                 key={category}
-                                id={category}
+                                // id={category}
                                 className={"px-6 py-1 rounded-lg data-[selected]:bg-gradient-to-r text-white from-dark-magenta to-navy-blue data-[selected]:border data-[selected]:font-bold focus:outline-none data-[hover]:bg-dark-gray duration-75 "}
 
                             >{category[0].toUpperCase() + category.slice(1)}</Tab>
