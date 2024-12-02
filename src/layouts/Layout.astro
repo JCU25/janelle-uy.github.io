@@ -1,6 +1,7 @@
 ---
 import TopNav from "../components/TopNav.astro";
 import Footer from "../components/Footer.astro";
+import { ArrowUpIcon } from "@heroicons/react/20/solid";
 
 interface Props {
 	title: string;
@@ -21,9 +22,45 @@ const { title } = Astro.props;
 		<TopNav />
 	</head>
 	<body>
+		<!-- <button
+			type="button"
+			id="scrollToTopBtn"
+			class="fixed bottom-20 right-28 block text-white bg-magenta z-50"
+		>
+			Scroll to top
+		</button> -->
+		<a
+			type="button"
+			id="scrollToTopBtn"
+			class="hidden scroll-to-top-btn bottom-16 right-8 md:bottom-20 md:right-28 bg-magenta"
+		>
+			<ArrowUpIcon className=" h-8 w-8" />
+		</a>
 		<slot />
 	</body><Footer />
 </html>
+
+<script>
+	// add function to scroll to top
+	function scrollToTop() {
+		document.body.scrollTop = 0; // For Safari
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+	// get scroll to top button element; add listener when clicked to scroll window to top
+	const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	scrollToTopBtn?.addEventListener("click", scrollToTop);
+
+	function showBtn() {
+		if (
+			document.body.scrollTop > 20 ||
+			document.documentElement.scrollTop > 20
+		) {
+			if (scrollToTopBtn) scrollToTopBtn.style.display = "block";
+		}
+	}
+
+	window.onscroll = showBtn;
+</script>
 
 <style is:global>
 	@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -50,5 +87,18 @@ const { title } = Astro.props;
 		-moz-user-select: none; /* Old versions of Firefox */
 		-ms-user-select: none; /* Internet Explorer/Edge */
 		user-select: none; /* Chrome, Edge, Opera and Firefox */
+	}
+
+	.scroll-to-top-btn {
+		/* text-white fixed bottom-20 right-28 block z-20 rounded-2xl bg-magenta cursor-pointer rounded-full p-1 */
+		/* display: block; */
+		color: white;
+		position: fixed;
+		z-index: 20;
+		border-radius: 9999px;
+		padding: 4px;
+		cursor: pointer;
+
+		box-shadow: 0px 2px 10px 1px #695a62;
 	}
 </style>
