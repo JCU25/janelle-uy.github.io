@@ -1,5 +1,5 @@
 import { TabGroup, TabList, Tab, TabPanel, TabPanels, Button, Dialog, DialogPanel, DialogBackdrop, DialogTitle } from '@headlessui/react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 
 export default function ProjectTabs() {
 
@@ -72,6 +72,7 @@ export default function ProjectTabs() {
                         ) : (
                             Object.entries(projects).map(([category, projects]) => (
                                 <TabPanel
+                                    key={category}
                                     className={`grid gap-6 md:grid-cols-4 grid-rows-none`}
                                     style={{
                                         display: "grid",
@@ -81,13 +82,12 @@ export default function ProjectTabs() {
 
 
                                     }}
-                                    key={category}
                                 >
                                     {
                                         Object.entries(projects).map(([projectName, project]) => (
 
-                                            <>
-                                                < Button
+                                            <Fragment
+                                                key={projectName}>< Button
                                                     onClick={() => setOpenDialog(projectName)}
                                                     as='div'
                                                     className="bg-top bg-center bg-black group bg-opacity-0 md:hover:bg-opacity-90 transition-all duration-250
@@ -172,8 +172,8 @@ export default function ProjectTabs() {
                                                                     {Array.isArray(project.roles) && (project.roles.length > 0) && (
                                                                         <ul className='flex flex-col gap-1 font-semibold'>
                                                                             {
-                                                                                project.roles.map(role => (
-                                                                                    <li>{role}</li>
+                                                                                project.roles.map((role, index) => (
+                                                                                    <li key={index}>{role}</li>
                                                                                 ))}
                                                                         </ul>
                                                                     )}
@@ -192,8 +192,8 @@ export default function ProjectTabs() {
 
                                                                             <ul className='flex flex-col md:flex-row gap-2 list-disc list-inside'>
                                                                                 {
-                                                                                    project.tools.map((tool) => (
-                                                                                        < li > {tool.name}</li>
+                                                                                    project.tools.map((tool, index) => (
+                                                                                        <li key={index}> {tool.name}</li>
                                                                                     ))
                                                                                 }
                                                                             </ul>
@@ -209,8 +209,8 @@ export default function ProjectTabs() {
                                                                     <h4 className='text-xl font-semibold text-off-white'>Contributions</h4>
                                                                     {Array.isArray(project.details) && (project.details.length > 0) && (
                                                                         <ul className='list-disc list-inside'>
-                                                                            {project.details.map(contribution => (
-                                                                                <li>{contribution}</li>
+                                                                            {project.details.map((contribution, index) => (
+                                                                                <li key={index}>{contribution}</li>
                                                                             ))}
                                                                         </ul>
                                                                     )}
@@ -219,7 +219,9 @@ export default function ProjectTabs() {
                                                         </DialogPanel>
                                                     </div >
                                                 </Dialog>
-                                            </>
+
+                                            </Fragment>
+
 
                                         ))
                                     }
