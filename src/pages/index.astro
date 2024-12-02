@@ -30,7 +30,7 @@ const TechList = [
     <section
         class="disable-select bg-dark-black flex flex-col justify-center justify-center gap-16 text-light-gray px-4"
     >
-        <div class="flex justify-center flex-col gap-3">
+        <div class="flex justify-center flex-col gap-3 mt-16">
             <h1 class="noselect text-center text-2xl font-bold block">
                 Hi! I'm - <br />
                 <span
@@ -52,24 +52,33 @@ const TechList = [
         </p>
 
         <div
-            class="inline-flex self-center font-bold text-off-white md:text-xl"
+            class="inline-flex flex flex-row self-center font-bold text-white md:text-xl gap-6"
         >
-            <a href="#contact-me" class="px-5 py-1"> Contact me </a>
+            <a type="button" class="gradient-border-container" href="">
+                <span class="gradient-border-text">Contact Me</span>
+                <span class="gradient-border-border"></span>
+            </a>
 
-            <button
-                class="inline-flex items-center gap-3 px-5 py-1 justify-center"
+            <a
+                href="#coding"
+                type="button"
+                class="browse-btn-container rounded"
             >
-                Browse projects
-                <span aria-hidden="true">
-                    <ArrowRightIcon className="w-7" />
+                <span
+                    class="browse-btn flex flex-row gap-1 justify-center items-center bg-dark-black px-3 rounded-lg"
+                >
+                    Browse projects
+                    <span aria-hidden="true">
+                        <ArrowRightIcon className="w-7" />
+                    </span>
                 </span>
-            </button>
+            </a>
         </div>
 
-        <div class="flex-row inline-flex gap-3 justify-center">
+        <div class="flex-row inline-flex gap-4 justify-center">
             <a href="https://github.com/JCU25">
                 <img
-                    class="w-8 h-8"
+                    class="w-8 h-8 hover:scale-110 transition-all duration-100"
                     src="/assets/github-vector.svg"
                     alt="GitHub"
                 />
@@ -77,7 +86,7 @@ const TechList = [
 
             <a href="https://www.linkedin.com/in/janelle-cassandra-uy"
                 ><img
-                    class="w-8 h-8"
+                    class="w-8 h-8 hover:scale-110 transition-all duration-100"
                     src="/assets/linkedin-vector.svg"
                     alt=""
                 /></a
@@ -85,7 +94,7 @@ const TechList = [
 
             <a class="flex" href="mailto:janellecc.uy@gmail.com"
                 ><img
-                    class="self-center w-8 h-8"
+                    class="self-center w-8 h-8 hover:scale-110 transition-all duration-100"
                     src="/assets/mail-icon-vector.svg"
                     alt=""
                 />
@@ -197,6 +206,55 @@ const TechList = [
 
         .scroller[data-animated="true"] .scroller_inner:hover {
             animation-play-state: paused;
+        }
+
+        .gradient-border-container {
+            position: relative;
+        }
+        .gradient-border-text {
+            position: relative;
+            z-index: 2;
+            margin: 2px;
+            padding: 0.25em 1em;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            border: none;
+            background-color: #101010;
+            transition: all 0.2s ease-in-out;
+        }
+        .gradient-border-border {
+            position: absolute;
+            z-index: 1;
+            background: radial-gradient(#bb37dc, #bb37dc, #f0a0a0);
+            left: 0px;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+        .gradient-border-container:hover .gradient-border-text {
+            background-color: transparent;
+        }
+
+        .gradient-border:hover {
+            z-index: 0;
+        }
+
+        .browse-btn-container {
+            background: linear-gradient(to right, #a32bc1, #dc8989);
+            padding: 0;
+        }
+
+        .browse-btn {
+            width: 100%;
+            height: 100%;
+
+            transition: background 0.2s ease-in-out;
+        }
+        .browse-btn-container:hover .browse-btn {
+            background: transparent;
         }
 
         @keyframes scroll {
