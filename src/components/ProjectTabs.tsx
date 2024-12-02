@@ -151,10 +151,10 @@ export default function ProjectTabs() {
                                                 <Dialog open={openDialog === projectName} onClose={() => setOpenDialog("")} className={`z-50`}>
                                                     <DialogBackdrop className="fixed inset-0 bg-pure-black/65" />
 
-                                                    <div className='fixed inset-0 flex md:my-6 md:mx-16 py-4 md:py-8 text-light-gray bg-pure-black/90 rounded-3xl overflow-hidden overflow-y-scroll'>
+                                                    <div className='fixed inset-0 flex md:my-6 md:mx-16 py-4 md:py-8 text-light-gray bg-pure-black/90 rounded-3xl overflow-hidden overflow-y-scroll z-20'>
 
-                                                        <DialogPanel className={`relative w-full h-full flex flex-col gap-12 pb-8 px-8 md:px-16`}>
-                                                            <button onClick={() => setOpenDialog("")} className='hidden md:block fixed top-16 md:top-20 right-4 md:right-28 p-4 w-min bg-white/10 rounded-md hover:bg-white/20 ease-in'>
+                                                        <DialogPanel className={`relative w-full h-full flex flex-col gap-12 pb-8 px-8 md:px-16 `}>
+                                                            <button onClick={() => setOpenDialog("")} className=' md:block fixed top-6 md:top-16 md:top-20 right-4 md:right-28 p-4 w-min bg-white/10 rounded-md hover:bg-white/20 ease-in'>
                                                                 &#x2715;
                                                             </button>
 
