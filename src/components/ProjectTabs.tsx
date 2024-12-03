@@ -1,5 +1,6 @@
 import { TabGroup, TabList, Tab, TabPanel, TabPanels, Button, Dialog, DialogPanel, DialogBackdrop, DialogTitle } from '@headlessui/react'
 import { useState, useEffect, Fragment } from 'react'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 
 export default function ProjectTabs() {
 
@@ -87,11 +88,12 @@ export default function ProjectTabs() {
                                         Object.entries(projects).map(([projectName, project]) => (
 
                                             <Fragment
-                                                key={projectName}>< Button
+                                                key={projectName}>
+                                                < Button
                                                     onClick={() => setOpenDialog(projectName)}
                                                     as='div'
                                                     className="bg-top bg-center bg-black group bg-opacity-0 md:hover:bg-opacity-90 transition-all duration-250
-                                                    p-8 bg-no-repeat bg-cover border border-dark-magenta/50 hover:border-magenta duration-500 overflow-hidden"
+                                                    p-8 bg-no-repeat bg-cover border border-dark-magenta/50 hover:border-magenta duration-500 overflow-hidden cursor-pointer"
 
                                                     style={{
                                                         backgroundImage: `url(${project.img})`,
@@ -104,9 +106,14 @@ export default function ProjectTabs() {
 
                                                     <div
                                                         className='h-full opacity-0 md:group-hover:opacity-100 text-light-gray flex flex-col gap-4 duration-500'>
-                                                        <h3
-                                                            className='text-off-white font-bold text-2xl'
-                                                        >{projectName}</h3>
+                                                        <div className='flex flex-row items-center gap-3'>
+                                                            <h3 className='text-off-white font-bold text-2xl'>{projectName}</h3>
+                                                            {(project.projectLink) && (
+                                                                <a target="_blank" href={project.projectLink}>
+                                                                    <ArrowTopRightOnSquareIcon className='h-8 w-8 hover:bg-dark-gray hover:text-white rounded-md p-1' />
+                                                                </a>
+                                                            )}
+                                                        </div>
 
                                                         <div className='flex flex-col gap-0 font-semibold text-off-white '>
 
@@ -144,7 +151,7 @@ export default function ProjectTabs() {
                                                             <p className='text-purple'>Click to see contributions</p>
                                                         </div> */}
 
-                                                        <p className='text-purple text-md'>Click to see contributions</p>
+                                                        <p className='text-purple text-md'>Click for more information</p>
                                                     </div>
                                                 </Button>
 
@@ -166,7 +173,16 @@ export default function ProjectTabs() {
 
                                                                 <div className='flex flex-col gap-3'>
                                                                     {/* project name */}
-                                                                    <DialogTitle className={`text-2xl font-bold text-off-white`}>{projectName}</DialogTitle>
+                                                                    <div className='flex flex-row gap-3 items-center'>
+                                                                        <DialogTitle className={`text-2xl font-bold text-off-white`}>{projectName}</DialogTitle>
+
+                                                                        {/* if there is a project link, display an open link icon */}
+                                                                        {(project.projectLink) && (
+                                                                            <a target="_blank" href={project.projectLink}>
+                                                                                <ArrowTopRightOnSquareIcon className='h-8 w-8 hover:bg-dark-gray hover:text-white rounded-md p-1' />
+                                                                            </a>
+                                                                        )}
+                                                                    </div>
 
                                                                     {/* project roles */}
                                                                     {Array.isArray(project.roles) && (project.roles.length > 0) && (
