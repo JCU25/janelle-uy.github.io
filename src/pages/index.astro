@@ -66,7 +66,7 @@ const TechList = [
             <a
                 href="#projects"
                 type="button"
-                class="browse-btn-container rounded"
+                class="browse-btn-container rounded pulse"
             >
                 <span
                     class="browse-btn flex flex-row gap-1 justify-center items-center bg-dark-black px-3 rounded-lg"
@@ -252,6 +252,56 @@ const TechList = [
         .browse-btn-container {
             background: linear-gradient(to right, #a32bc1, #dc8989);
             padding: 0;
+            animation: bounce-shock 2.5s infinite;
+        }
+
+        @keyframes bounce-shock {
+            0% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-10px);
+            }
+            25% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+
+            65% {
+                transform: translateY(-4px);
+            }
+
+            72% {
+                transform: translateY(0);
+            }
+
+            79% {
+                transform: translateY(0);
+            }
+
+            80% {
+                transform: rotate(4deg);
+            }
+            82% {
+                transform: rotate(-4deg);
+            }
+
+            86% {
+                transform: rotate(4deg);
+            }
+            90% {
+                transform: rotate(-4deg);
+            }
+
+            94% {
+                transform: rotate(4deg);
+            }
         }
 
         .browse-btn {
