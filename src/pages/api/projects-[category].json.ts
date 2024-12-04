@@ -235,19 +235,35 @@ const projects = {
                 rows: 1,
             },
         },
-    },
-    design: {
-        "Shelf Gleam": {
-            description:
-                "A website developed for the Office for Corporate Partnerships (OCP) of the Mapua Malayan Colleges Mindanao (MMCM) to track and monitor corporate partnerships and students internship data.",
-            img: "/assets/projects/ccis-website.png",
+        "COMING SOON": {
+            description: "Project undergoing planning and construction.",
+            img: "/assets/projects/coming-soon-coding-projects.png",
             details: [
                 // details shall be the "features list" for the coding projects section
             ],
             tools: [
                 {
                     name: "Figma",
-                    src: "Figma",
+                    src: "",
+                },
+            ],
+            displaySize: {
+                cols: 2,
+                rows: 1,
+            },
+        },
+    },
+    design: {
+        "COMING SOON": {
+            description: "This project is currently being polished.",
+            img: "/assets/projects/coming-soon-design-projects.png",
+            details: [
+                // details shall be the "features list" for the coding projects section
+            ],
+            tools: [
+                {
+                    name: "Figma",
+                    src: "",
                 },
             ],
             displaySize: {
