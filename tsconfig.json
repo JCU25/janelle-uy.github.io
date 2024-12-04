@@ -1,8 +1,8 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "jsx": "react-jsx",
-    "allowImportingTsExtensions": true
-  },
-  "extends": "astro/tsconfigs/strict"
+    "compilerOptions": {
+        // "jsx": "react",
+        "jsx": "react-jsx",
+        "allowImportingTsExtensions": true
+    },
+    "extends": "astro/tsconfigs/strict"
 }
