@@ -236,19 +236,13 @@ const projects = {
             },
         },
         "COMING SOON": {
-            description: "Project undergoing planning and construction.",
-            img: "/assets/projects/coming-soon-coding-projects.png",
+            description: "Project is currently undergoing planning and construction.",
+            img: "/assets/projects/elongated-coming-soon-coding-projects.png",
             details: [
                 // details shall be the "features list" for the coding projects section
             ],
-            tools: [
-                {
-                    name: "Figma",
-                    src: "",
-                },
-            ],
             displaySize: {
-                cols: 2,
+                cols: 4,
                 rows: 1,
             },
         },
@@ -256,7 +250,7 @@ const projects = {
     design: {
         "COMING SOON": {
             description: "This project is currently being polished.",
-            img: "/assets/projects/coming-soon-design-projects.png",
+            img: "/assets/projects/elongated-coming-soon-design-projects.png",
             details: [
                 // details shall be the "features list" for the coding projects section
             ],
@@ -267,7 +261,7 @@ const projects = {
                 },
             ],
             displaySize: {
-                cols: 2,
+                cols: 4,
                 rows: 1,
             },
         },
