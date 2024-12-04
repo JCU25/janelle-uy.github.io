@@ -123,7 +123,7 @@ export default function ProjectTabs() {
                                                                 </h4>
                                                             ))
                                                         ) : (
-                                                            <h4>no roles</h4>
+                                                            <h4>--</h4>
                                                         )
                                                     }
                                                 </div>
