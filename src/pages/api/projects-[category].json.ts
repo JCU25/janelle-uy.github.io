@@ -33,10 +33,6 @@ const projects = {
                     src: "",
                 },
                 {
-                    name: "React",
-                    src: "",
-                },
-                {
                     name: "Ubuntu-based Virtual Private Server",
                     src: "",
                 },
