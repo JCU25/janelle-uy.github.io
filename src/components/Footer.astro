@@ -1,207 +1,135 @@
 ---
 const date = new Date().getFullYear();
+const links = {
+    "/assets/github-vector.svg": "https://www.github.com/jcu25",
+    "/assets/linkedin-vector.svg":
+        "https://www.linkedin.com/in/janelle-cassandra-uy",
+    "/assets/mail-icon-vector.svg": "mailto:janellecc.uy@gmail.com",
+};
 ---
 
-<footer>
-    <div class="info-container">
-        <div class="column">
-            <a class="heading name" href="/"><p>JANELLE UY</p></a>
-            <div class="column-child-div">
-                <p>Contact Me:</p>
-                <div class="icons-div">
-                    <a href="https://github.com/JCU25" target="_blank"
-                        ><img
-                            class="icon"
-                            src="/assets/github-vector.svg"
-                            alt="github"
-                        /></a
+<footer
+    class="flex flex-col w-full py-4 px-4 pt-10 md:pt-16 md:px-16 lg:px-28 bg-gradient-to-r from-dark-magenta to-navy-blue text-white bg-opacity-100 gap-10"
+>
+    <div class="flex flex-col gap-14">
+        <h1
+            class="flex flex-row disable-select text-2xl gap-3 font-bold lg:justify-center"
+        >
+            <img src="/assets/JU.svg" alt="Janelle Uy Logo" class="h-10" />
+            <span class="self-center">Janelle Uy</span>
+        </h1>
+        <ul
+            class="flex flex-col gap-4 lg:flex-row md:justify-between pb-6 border-b"
+        >
+            {
+                Object.entries(links).map(([icon, link]) => {
+                    return (
+                        <li class="hover:bg-black hover:bg-opacity-20 p-1 rounded-md">
+                            <a
+                                class="flex flex-row gap-3 items-center"
+                                target="_blank"
+                                href={link}
+                            >
+                                <img src={icon} alt="link" class="w-7 h-7" />
+                                <p class="self-center text-sm font-semibold">
+                                    {link.includes("https://www.")
+                                        ? link.replace("https://www.", "")
+                                        : link.replace("mailto:", "")}
+                                </p>
+                            </a>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+
+        <div class="flex flex-col w-full lg:flex-row lg:px-28 gap-28">
+            <div
+                class="w-full flex flex-row justify-center w-2/3 gap-10 lg:gap-28 self-center"
+            >
+                <div class="flex flex-grow flex-col gap-4 w-full lg:w-1/2">
+                    <h2 class="text-lg font-bold text-center lg:text-left">
+                        Pages
+                    </h2>
+                    <ul class="w-full flex flex-col items-center gap-3">
+                        <li class="w-full flex justify-center lg:justify-start">
+                            <a
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
+                                href="/">Home</a
+                            >
+                        </li><li
+                            class="w-full flex justify-center lg:justify-start"
+                        >
+                            <a
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
+                                href="/#projects">Projects</a
+                            >
+                        </li><li
+                            class="w-full flex justify-center lg:justify-start"
+                        >
+                            <a
+                                class="hover:bg-black text-sm hover:bg-opacity-20 p-1 rounded-md"
+                                href="/about-me">About Me</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-grow flex-col gap-4 w-full lg:w-1/2">
+                    <h2 class="text-lg font-bold text-center lg:text-left">
+                        Services
+                    </h2>
+                    <ul
+                        class="w-full flex flex-col justify-center items-center gap-4"
                     >
-                    <a
-                        href="https://www.linkedin.com/in/janelle-cassandra-uy"
-                        target="_blank"
-                        ><img
-                            class="icon"
-                            src="/assets/linkedin-vector.svg"
-                            alt="linkedin"
-                        /></a
-                    >
-                    <a href="mailto:janellecc.uy@gmail.com" target="_blank"
-                        ><img
-                            class="icon"
-                            src="/assets/mail-icon-vector.svg"
-                            alt="gmail"
-                        /></a
-                    >
+                        <li class="w-full flex justify-center lg:justify-start">
+                            <span class="text-center text-sm"
+                                >Web Development</span
+                            >
+                        </li>
+                        <li class="w-full flex justify-center lg:justify-start">
+                            <span class="text-center text-sm">UI Design</span>
+                        </li><li
+                            class="w-full flex justify-center lg:justify-start"
+                        >
+                            <span class="text-center text-sm"
+                                >Database Design</span
+                            >
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <div class="column">
-            <h3 class="heading">Services</h3>
-            <div class="column-child-div">
-                <p>Web Development</p>
-                <p>Software Development</p>
-                <p>API Creations</p>
-                <p>AI Model Training</p>
-            </div>
-        </div>
-
-        <div class="column">
-            <h3 class="heading">Pages</h3>
-            <div class="column page-link-div">
-                <a class="page-link" href="/about-me">About Me</a>
-                <a class="page-link" href="/projects">My Projects</a>
+            <div
+                class="disable-select flex flex-col justify-center lg:w-1/3 flex flex-col items-center"
+            >
+                <p class="text-center">
+                    Feel free to reach out for any queries. I’ll try my best to
+                    help you!
+                </p>
+                <a
+                    type="button"
+                    class="footer-button bg-light-black px-6 py-2 rounded-md mt-10 cursor-pointer"
+                    href="mailto:janellecc.uy@gmail.com"
+                >
+                    Send me a message!
+                </a>
             </div>
         </div>
     </div>
 
-    <p>
+    <p class="self-center text-sm">
         Copyright &copy
-        {date == 2024 ? <span> 2024 </span> : <span>2024-{date}</span>}
+        {date == 2024 ? <span> 2024 </span> : <span>2023-{date}</span>}
         | All rights reserved.
     </p>
 </footer>
 
 <style>
-    footer {
-        margin-top: 100px;
-        border-top: 1px solid black;
-        padding: 50px 0 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
+    .footer-button {
+        box-shadow: 8px 12px 10px 0 rgba(0, 0, 0, 0.3);
     }
-
-    .info-container {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        gap: 180px;
-    }
-
-    .column {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .column-child-div {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .heading {
-        padding: 0;
-        font-family: "Libre Franklin", sans-serif;
-        font-weight: 700;
-        margin-bottom: 20px;
-        color: black;
-        text-decoration: none;
-    }
-
-    .name:hover {
-        color: #262e6e;
-    }
-
-    a:hover {
-        transform: scale(1.1);
-    }
-
-    .icons-div {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        img {
-            width: 30px;
-        }
-    }
-
-    .page-link-div {
-        display: flex;
-        gap: 14px;
-    }
-
-    .page-link {
-        color: #000000;
-        text-decoration: none;
-    }
-
-    .page-link:hover {
-        color: #262e6e;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    @media screen and (max-width: 830px) {
-        footer {
-            margin-top: 100px;
-            border-top: 1px solid black;
-            padding: 50px 0 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .info-container {
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-            gap: 70px;
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .column-child-div {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .heading {
-            padding: 0;
-            font-family: "Libre Franklin", sans-serif;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: black;
-            text-decoration: none;
-        }
-
-        .name:hover {
-            color: #90420a;
-        }
-
-        .icons-div {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-
-            img {
-                width: 30px;
-            }
-        }
-
-        .page-link-div {
-            display: flex;
-            gap: 14px;
-        }
-
-        .page-link {
-            color: #000000;
-            text-decoration: none;
-        }
-
-        .page-link:hover {
-            color: #90420a;
-            text-decoration: none;
-        }
+    .footer-button:hover {
+        background-color: #373737;
+        box-shadow: 8px 12px 10px 0 rgba(255, 255, 255, 0.3);
     }
 </style>

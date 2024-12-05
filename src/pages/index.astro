@@ -1,525 +1,334 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectHighlightLeftImg from "../components/ProjectHighlightLeftImg.astro";
-import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.astro";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import ProjectTabs from "../components/ProjectTabs.tsx";
+
+const TechList = [
+    "devicon_typescript.svg",
+    "logos_javascript.svg",
+    "logos_nodejs.svg",
+    "logos_express.svg",
+    "logos_python.svg",
+    "devicon_spring-wordmark.svg",
+    "logos_flutter.svg",
+    "devicon_dart-wordmark.svg",
+    "devicon_java-wordmark.svg",
+    "logos_git.svg",
+    "logos_mysql.svg",
+    "logos_mongodb.svg",
+    "logos_figma.svg",
+    "logos_astro.svg",
+    "devicon_react-wordmark.svg",
+    "logos_tailwindcss.svg",
+    "logos_headlessui.svg",
+    "devicon_bootstrap-wordmark.svg",
+    "logos_storyblok.svg",
+];
 ---
 
 <Layout title="Janelle Uy">
-    <section class="flex-parent">
-        <div class="flex-center hero-section">
-            <div class="intro-info">
-                <div>
-                    <h1 class="name">Hello I'm Janelle</h1>
-                    <p class="specialty rajdhani-medium">
-                        Full-Stack Developer
-                    </p>
-                </div>
+    <section
+        class="disable-select bg-dark-black flex flex-col justify-center justify-center gap-16 text-light-gray px-4"
+    >
+        <div class="flex justify-center flex-col gap-3">
+            <h1 class="noselect text-center text-2xl font-bold block">
+                Hi! I'm - <br />
+                <span
+                    class="inline-block text-magenta text-6xl md:text-7xl pb-4 border-b-8 p-0"
+                >
+                    Janelle Uy.
+                </span>
+            </h1>
+            <h2 class="text-center text-2xl sm:text-3xl font-bold">
+                A software developer.
+            </h2>
+        </div>
 
-                <div class="skills rajdhani-medium">
-                    <p>Web Development</p>
-                    <p>|</p>
+        <p
+            class="hero-text text-center md:text-lg sm:w-3/4 md:w-1/2 self-center"
+        >
+            If you need websites, applications or scripts to be developed or
+            something you need help with, reach out to me!
+        </p>
 
-                    <p>Software Development</p>
-                    <p>|</p>
+        <div
+            class="inline-flex flex flex-row self-center font-bold text-white md:text-xl gap-6"
+        >
+            <a
+                type="button"
+                class="gradient-border-container"
+                href="mailto:janellecc.uy@gmail.com"
+            >
+                <span class="gradient-border-text">Contact Me</span>
+                <span class="gradient-border-border"></span>
+            </a>
 
-                    <p>Database Design</p>
-                    <p>|</p>
+            <a
+                href="#projects"
+                type="button"
+                class="browse-btn-container rounded pulse"
+            >
+                <span
+                    class="browse-btn flex flex-row gap-1 justify-center items-center bg-dark-black px-3 rounded-lg"
+                >
+                    Browse projects
+                    <span aria-hidden="true">
+                        <ArrowRightIcon className="w-7" />
+                    </span>
+                </span>
+            </a>
+        </div>
 
-                    <p>API Creation</p>
-                    <p>|</p>
+        <div class="flex-row inline-flex gap-4 justify-center">
+            <a target="_blank" href="https://github.com/JCU25">
+                <img
+                    class="w-8 h-8 hover:scale-110 transition-all duration-100"
+                    src="/assets/github-vector.svg"
+                    alt="GitHub"
+                />
+            </a>
 
-                    <p>Discord Bots</p>
-                    <p>|</p>
+            <a
+                target="_blank"
+                href="https://www.linkedin.com/in/janelle-cassandra-uy"
+                ><img
+                    class="w-8 h-8 hover:scale-110 transition-all duration-100"
+                    src="/assets/linkedin-vector.svg"
+                    alt=""
+                /></a
+            >
 
-                    <p>Database Management</p>
-                    <p>|</p>
-
-                    <p>Frontend Development</p>
-                    <p>|</p>
-
-                    <p>Backend Development</p>
-                </div>
-
-                <div class="contact-div">
-                    <a
-                        class="contact-icon"
-                        target="_blank"
-                        href="https://github.com/JCU25"
-                        target="_blank"
-                        ><img
-                            class="contact-icon"
-                            src="/assets/github-vector.svg"
-                            alt="github"
-                            width="10px"
-                            height="10px"
-                        /></a
-                    >
-                    <a
-                        class="contact-icon"
-                        target="_blank"
-                        href="https://www.linkedin.com/in/janelle-cassandra-uy"
-                        target="_blank"
-                        ><img
-                            class="contact-icon"
-                            src="/assets/linkedin-vector.svg"
-                            alt="github"
-                            width="10px"
-                            height="10px"
-                        /></a
-                    >
-                </div>
-
-                <div class="more-info-div">
-                    <p class="what-i-do">
-                        I make custom systems to help <span class="accent"
-                            >digitize and automate</span
-                        > your <span class="accent">
-                            manually tedious tasks</span
-                        >!
-                    </p>
-
-                    <p>
-                        Send me an email, and let's discuss about your desired
-                        website.
-                    </p>
-                </div>
-
-                <div class="contact-div">
-                    <a class="button" href="mailto:janellecc.uy@gmail.com"
-                        >Contact Me</a
-                    >
-                </div>
-            </div>
-
-            <img
-                class="highlight-img"
-                src="/assets/hero_proj_highlight.png"
-                alt="Project Highlights"
-            />
+            <a class="flex" target="_blank" href="mailto:janellecc.uy@gmail.com"
+                ><img
+                    class="self-center w-8 h-8 hover:scale-110 transition-all duration-100"
+                    src="/assets/mail-icon-vector.svg"
+                    alt=""
+                />
+            </a>
         </div>
     </section>
 
-    <section class="flex-parent half-height">
-        <div class="more-about-me-section">
-            <p class="more-about-me">
-                I am a full-stack developer dedicated to life-long learning. I
-                always look for ways to expand my skillset.
+    <section
+        id="projects"
+        class="disable-select text-light-gray bg-pure-black bg-opacity-90 pt-16 pb-16 md:px-16 flex flex-col gap-4"
+    >
+        <h2
+            class="text-center text-off-white text-4xl md:text-5xl font-semibold"
+        >
+            <span class="inline-block border-b-4 border-magenta"
+                >MY PROJECTS</span
+            >
+        </h2>
+
+        <ProjectTabs client:load />
+    </section>
+
+    <section
+        class="disable-select text-light-gray bg-dark-black flex flex-col justify-center gap-16 md:gap-28 py-28 md:py-32"
+    >
+        <di class="flex flex-col gap-7">
+            <h2
+                class="text-off-white font-bold text-4xl md:text-5xl text-center"
+            >
+                What I Use
+            </h2>
+            <p class="text-light-gray text-center text-sm md:text-base">
+                These are the languages, frameworks, and tools that I use:
             </p>
-            <p>
-                <a class="button" href="/about-me">More about me</a>
-            </p>
+        </di>
+
+        <div
+            class="scroller hover:bg-white/65 cursor-pointer hover:bg-opacity-90 h-32 md:h-64 bg-white/50 bg-opacity-80 px-2 md:px-16 overflow-x-auto flex items-center"
+        >
+            <ul
+                class="scroller_inner h-full flex flex-wrap items-center gap-8 md:gap-16"
+            >
+                {
+                    TechList.map((tech) => {
+                        return (
+                            <li>
+                                <img
+                                    class="h-12 max-w-36 md:h-20 m-auto "
+                                    src={`/assets/tech-list/${tech}`}
+                                    alt={tech
+                                        .split("_")[1]
+                                        .replace(".svg", "")
+                                        .replace("-", "")}
+                                />
+                            </li>
+                        );
+                    })
+                }
+            </ul>
         </div>
+
+        <script>
+            const scrollers = document.querySelectorAll(".scroller");
+
+            if (
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                addAnimation();
+            }
+
+            function addAnimation() {
+                scrollers.forEach((element) => {
+                    element.setAttribute("data-animated", "true");
+
+                    const scrollerInner =
+                        document.querySelector(".scroller_inner");
+                    const scrollerContent = Array.from(scrollerInner!.children);
+
+                    scrollerContent.forEach((item) => {
+                        let duplicate = item.cloneNode(true) as HTMLElement;
+                        duplicate.setAttribute("aria-hidden", "true");
+                        scrollerInner?.appendChild(duplicate);
+                    });
+                });
+            }
+        </script>
     </section>
 
-    <section class="highlights">
-        <div class="flex-center"></div>
-        <div class="highlights-separator">
-            <h1 class="sep1">PROJECT</h1>
-            <h3 class="sep2">highlights</h3>
-        </div>
+    <style>
+        section {
+            width: 100%;
+            min-height: 90vh;
+        }
 
-        <div class="project-button-div">
-            <a class="project-button" href="/projects">View All Projects</a>
-        </div>
+        .hero-text {
+            max-width: 750px;
+        }
 
-        <div class="proj-container">
-            <ProjectHighlightLeftImg
-                id="ocp"
-                date="Mar 2022 - Present"
-                img_src="/assets/ocp-website.png"
-                proj_link="https://mmcm-ocp.com"
-                title="OCP Website"
-                roles={[
-                    "Backend Lead (Jun 2022 - Aug 2024)",
-                    "Backend Developer (Mar 2022 - Aug 2024)",
-                ]}
-                contributions={[
-                    "Developed server-side logic such as: cron jobs, exporting information into excel files, database queries, scripts, etc.",
-                    "Created efficient database queries for all data.",
-                    "Designed and implemented MySQL database, and REST APIs.",
-                    "Participated in planning, and communicating with the administrators and staffs, and other teams and members to effectively carry out tasks, and implement new features on time.",
-                    "Reduced redundant and manual labor by creating automated and scheduled tasks (email sending, contract expiration checker, etc.).",
-                    "Contributed to site deployment and maintenance with Vultr Object Storage, Linux VPS",
-                ]}
-                project_type="Web Development"
-                description="Developed a website for the Mapua Malayan Colleges Mindanao (MMCM) Office of Corporate Partnerships (OCP) to monitor company partnerships and student internship data."
-                tools="NodeJS, MySQL, ReactJS, Ubuntu-based Virtual Private Server"
-            />
+        .scroller[data-animated="true"] {
+            min-height: 200px;
+            max-height: 360px;
+            overflow-x: hidden;
+        }
 
-            <ProjectHighlightRightImg
-                id="ecd"
-                date="Oct 2023 - Feb 2024"
-                img_src="/assets/ecd-dsa.png"
-                proj_link=""
-                title="ECD-DSA: Estimating Crowd Density to Detect Sparse Areas"
-                roles={[
-                    "Software Developer  (Oct 2023 - Feb 2024)",
-                    "Model Trainer (Nov 2023 - Jan 2024)",
-                ]}
-                contributions={[
-                    "Created and planned server-side logic, and system",
-                    "Proposed main methodology for estimating crowd density.",
-                    "Created an alarm and notification system using event-driven architecture (Socket.IO) for informing personnel in-charge of emergency situations real-time.",
-                    "Trained artificial intelligence models, specifically YOLOv8 models, to improve model accuracy and performance in detecting humans real-time to estimate the crowd density.",
-                    "Deployed the server to Render (web service) for the network socket communication used by the alarm system",
-                ]}
-                project_type="Software Development & Machine Learning"
-                description="This is an undergraduate thesis project created to help monitor crowd density and detect sparse areas from connected cameras; and generate alerts for rising crowd density, and overcrowding. Alerts generated are forwarded to other computers to alert other officers."
-                tools="Python, PyQt5, YOLOv8, Render"
-            />
+        .scroller[data-animated="true"] .scroller_inner {
+            display: flex;
+            flex-wrap: nowrap;
+            animation: scroll 40s linear infinite;
+        }
 
-            <ProjectHighlightLeftImg
-                id="ccis-website"
-                date="Jul 2021 - Aug 2021"
-                img_src="/assets/ccis-website.png"
-                proj_link=""
-                title="MMCM CCIS Website"
-                roles={["Backend Developer (Jul 2021 - Aug 2021)"]}
-                contributions={[
-                    "Created  functionality for viewing, adding and editing faculties and student officers per school year",
-                    "Created pages using EJS for viewing information on faculties and student officers per school year",
-                ]}
-                project_type="Web Development"
-                description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao (MMCM) Computing Students Society (CSS) to allow students to post their projects, and to get updates on school events."
-                tools="NodeJS, ReactJS, REST API"
-            />
-        </div>
+        .scroller[data-animated="true"] .scroller_inner:hover {
+            animation-play-state: paused;
+        }
 
-        <div class="project-button-div">
-            <a class="project-button" href="/projectsv2">View All Projects</a>
-        </div>
-    </section>
+        .gradient-border-container {
+            position: relative;
+        }
+        .gradient-border-text {
+            position: relative;
+            z-index: 2;
+            margin: 2px;
+            padding: 0.25em 1em;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            border: none;
+            background-color: #101010;
+            transition: all 0.2s ease-in-out;
+        }
+        .gradient-border-border {
+            position: absolute;
+            z-index: 1;
+            background: radial-gradient(#bb37dc, #bb37dc, #f0a0a0);
+            left: 0px;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+        .gradient-border-container:hover .gradient-border-text {
+            background-color: transparent;
+        }
+
+        .gradient-border:hover {
+            z-index: 0;
+        }
+
+        .browse-btn-container {
+            background: linear-gradient(to right, #a32bc1, #dc8989);
+            padding: 0;
+            animation: bounce-shock 2.5s infinite;
+        }
+
+        @keyframes bounce-shock {
+            0% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-10px);
+            }
+            25% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+
+            65% {
+                transform: translateY(-4px);
+            }
+
+            72% {
+                transform: translateY(0);
+            }
+
+            79% {
+                transform: translateY(0);
+            }
+
+            80% {
+                transform: rotate(4deg);
+            }
+            82% {
+                transform: rotate(-4deg);
+            }
+
+            86% {
+                transform: rotate(4deg);
+            }
+            90% {
+                transform: rotate(-4deg);
+            }
+
+            94% {
+                transform: rotate(4deg);
+            }
+        }
+
+        .browse-btn {
+            width: 100%;
+            height: 100%;
+
+            transition: background 0.2s ease-in-out;
+        }
+        .browse-btn-container:hover .browse-btn {
+            background: transparent;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(
+                    calc(-50% - 1rem)
+                ); /* Start at original position */
+            }
+        }
+        @media (min-width: 768px) {
+            @keyframes scroll {
+                to {
+                    transform: translateX(
+                        calc(-50% - 2rem)
+                    ); /* Start at original position */
+                }
+            }
+        }
+    </style>
 </Layout>
-
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
-    .rajdhani-medium {
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-    }
-
-    p {
-        font-size: 1.25em;
-        margin: 0;
-    }
-
-    .flex-parent {
-        width: 99vw;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .half-height {
-        /* height: 40vh;*/
-        height: auto;
-        margin: 2% 0 7% 0;
-    }
-
-    .hero-section {
-        margin-top: 10%;
-    }
-
-    .highlight-img {
-        width: 45%;
-        height: 55%;
-        margin: auto;
-    }
-
-    .flex-center {
-        width: 85vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    .intro-info {
-        width: 40vw;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .name {
-        font-family: "Manrope", sans-serif;
-        font-size: 45px;
-    }
-
-    .specialty {
-        font-size: 1.25em;
-        margin-top: 2%;
-    }
-
-    .skills {
-        margin-top: 30px;
-        width: 80%;
-        font-size: 1em;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 25px;
-    }
-
-    .more-info-div {
-        display: flex;
-        flex-direction: column;
-        margin: 5% 0;
-        gap: 24px;
-    }
-
-    .what-i-do {
-        font-family: "Manrope", sans-serif;
-        font-size: 1.5em;
-    }
-
-    .contact-div {
-        margin: 5% 0;
-        display: flex;
-        gap: 20px;
-    }
-
-    .more-about-me-section {
-        width: 40vw;
-        height: 20vh;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-    }
-
-    .button {
-        color: #ffffff;
-        font-family: "Manrope", sans-serif;
-        font-weight: 600;
-        background-color: #262e6e;
-        border: 2px solid #262e6e;
-        padding: 8px;
-        border-radius: 10px;
-        text-decoration: none;
-    }
-
-    .button:hover {
-        /* background-color: #623717; */
-        background-color: #f2f2f2;
-        color: #262e6e;
-    }
-
-    .accent {
-        font-weight: 800;
-    }
-
-    .contact-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .contact-icon:hover {
-        transform: scale(1.1);
-    }
-
-    .highlights {
-        width: 99vw;
-        box-sizing: border-box;
-    }
-
-    .highlights-separator {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-        align-items: center;
-    }
-    .sep1 {
-        font-size: 60px;
-        font-weight: 400;
-    }
-    .sep2 {
-        margin-left: 15%;
-        font-size: 40px;
-        font-weight: 300;
-    }
-
-    .proj-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* margin-top: 50px; */
-        gap: 30px;
-    }
-
-    .project-button {
-        font-size: 15px;
-        margin: 40px 0;
-        display: block;
-        color: #262e6e;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .project-button-div {
-        display: flex;
-        margin: 0 5%;
-        justify-content: flex-end;
-    }
-
-    .project-button:hover {
-        font-weight: 800;
-        text-decoration: underline;
-    }
-
-    @media screen and (max-width: 768px) {
-        p {
-            margin: 0;
-        }
-
-        .flex-parent {
-            width: 100%;
-            box-sizing: border-box;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            overflow: hidden;
-            padding: 10px;
-        }
-
-        .hero-section {
-            margin-top: 30px;
-        }
-
-        .half-height {
-            align-items: center;
-            margin: 0;
-            height: auto;
-        }
-
-        .highlight-img {
-            margin: 80px auto 5% auto;
-            width: 70%;
-            height: 55%;
-            padding: 0;
-        }
-
-        .flex-center {
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-between;
-        }
-
-        .intro-info {
-            width: 100%;
-            gap: 0px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .name {
-            font-family: "Manrope", sans-serif;
-            /* font-size: 59px; */
-            font-size: 30px;
-            text-wrap: wrap;
-            padding: 0;
-            margin: 0;
-        }
-
-        .specialty {
-            font-size: 18px;
-            margin-top: 2%;
-        }
-
-        .skills {
-            margin: 30px 0;
-            width: 85%;
-            font-size: 15px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            column-gap: 2%;
-        }
-
-        .contact-icon {
-            width: 28px;
-        }
-
-        .contact-div {
-            display: flex;
-            gap: 15px;
-        }
-
-        .more-info-div {
-            margin-top: 0;
-            margin-bottom: 30px;
-        }
-
-        .what-i-do {
-            font-family: "Manrope", sans-serif;
-            font-size: 1.15em;
-        }
-
-        .more-about-me-section {
-            width: 85vw;
-            height: auto;
-            margin: 80px 0;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .button {
-            font-size: 15px;
-            color: #ffffff;
-            font-family: "Manrope", sans-serif;
-            font-weight: 600;
-            background-color: #262e6e;
-            padding: 8px;
-            border-radius: 10px;
-
-            text-decoration: none;
-        }
-
-        .button:hover {
-            /* background-color: #623717; */
-            background-color: #ffffff;
-        }
-
-        .accent {
-            font-weight: 800;
-        }
-
-        .highlights {
-            width: 99vw;
-            box-sizing: border-box;
-        }
-
-        .highlights-separator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .proj-container {
-            display: flex;
-            flex-direction: column;
-            margin-top: 50px;
-            gap: 12px;
-        }
-        .sep1 {
-            font-size: 40px;
-            font-weight: 400;
-        }
-        .sep2 {
-            margin-left: 20%;
-            font-size: 25px;
-            font-weight: 400;
-        }
-
-        .project-button {
-            font-size: 15px;
-            margin: 40px 0;
-            text-decoration: none;
-        }
-    }
-</style>

@@ -1,149 +1,87 @@
-<div>
-  <!-- <h6>JANELLE UY</h6> -->
+---
+import { Bars3Icon } from "@heroicons/react/20/solid";
+import MobileNav from "./MobileNav";
+const links = {
+    Home: "/",
+    // Coding: "/#coding",
+    // Designs: "/#design",
+    Projects: "/#projects",
+    "BY THE WAY!!": "/about-me",
+};
+---
 
-  <nav>
-    <a id="home" href="/">Home</a>
-    <a id="projets" href="/projects">My Projects</a>
-    <a id="about-me" href="/about-me">About Me</a>
-  </nav>
-</div>
+<nav
+    class="h-14 text-white flex flex-row w-full bg-gradient-to-r from-dark-magenta to-navy-blue px-4 md:px:16 lg:px-28 justify-between text-sm font-semibold shadow-md"
+>
+    <!-- <h6>JANELLE UY</h6> -->
+    <a href="/" class="h-full flex">
+        <img
+            src="/assets/JU.svg"
+            alt="Janelle Uy logo"
+            class="h-3/5 self-center"
+        />
+    </a>
+
+    <!-- <Bars3Icon className="h-3/5 self-center md:hidden" /> -->
+    <div class="flex md:hidden">
+        <MobileNav client:load />
+    </div>
+
+    <ul class="hidden md:flex flex-row h-full gap-10">
+        {
+            Object.entries(links).map(([page, path]) => {
+                return (
+                    <li id={page} class="h-full self-center flex">
+                        <a class="flex h-full" href={path}>
+                            <span class="self-center">{page}</span>
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</nav>
 
 <script>
-  const home: HTMLElement | null = document.getElementById("home");
-  const projects: HTMLElement | null = document.getElementById("projets");
-  const about_me: HTMLElement | null = document.getElementById("about-me");
+    const home: HTMLElement | null = document.getElementById("Home");
+    const coding: HTMLElement | null = document.getElementById("Coding");
+    const design: HTMLElement | null = document.getElementById("Design");
+    const projects: HTMLElement | null = document.getElementById("Projects");
+    const about_me: HTMLElement | null =
+        document.getElementById("BY THE WAY!!");
 
-  // text decoration when "Home" is selected
-  if (window.location.pathname == "/") {
-    if (home) {
-      home.style.textDecoration = "underline";
+    // text decoration when "Home" is selected
+    if (window.location.pathname == "/") {
+        if (home) {
+            home.style.borderBottom = "2px solid white";
+        }
     }
-  }
+    // text decoration when "Projects" is selected
+    if (window.location.hash == "#projects") {
+        if (home) home.style.borderBottom = "none";
+        if (projects) projects.style.borderBottom = "2px solid white";
+    }
 
-  // text decoration when "Projects" is selected
-  if (
-    window.location.pathname == "/projects" ||
-    window.location.pathname == "/projects/"
-  ) {
-    if (projects) {
-      projects.style.textDecoration = "underline";
-    }
-  }
+    // if (
+    //     window.location.hash === "#coding" ||
+    //     window.location.hash == "/#coding/"
+    // ) {
+    //     console.log("ey");
+    //     if (home) home.style.borderBottom = "none";
+    //     if (coding) coding!.style.borderBottom = "2px solid white";
+    // }
 
-  // text decoration when "About Me" is selected
-  if (
-    window.location.pathname == "/about-me" ||
-    window.location.pathname == "/about-me/"
-  ) {
-    if (about_me) {
-      about_me.style.textDecoration = "underline";
+    // text decoration when "BY THE WAY!!" is selected
+    if (
+        window.location.pathname == "/about-me" ||
+        window.location.pathname == "/about-me/"
+    ) {
+        if (about_me) about_me.style.borderBottom = "2px solid white";
     }
-  }
 </script>
 
 <style>
-  div {
-    margin: 0;
-    background-color: #ffffff;
-    width: 99vw;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #262e6e;
-
-    position: fixed;
-    top: 0;
-  }
-
-  nav {
-    width: 40%;
-    background-color: #ffffff;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    font-family: "Manrope", sans-serif;
-    font-weight: 600;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    transform: scale(1.05);
-  }
-
-  @media screen and (max-width: 1200px) {
-    div {
-      margin: 0;
-      background-color: #ffffff;
-      width: 100vw;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    nav {
-      width: 60%;
-      background-color: #ffffff;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    a {
-      text-decoration: none;
-      color: #000000;
-      font-size: 15px;
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    div {
-      margin: 0;
-      background-color: #ffffff;
-      width: 100vw;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    nav {
-      width: 90vw;
-      background-color: #ffffff;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    a {
-      text-decoration: none;
-      color: #000000;
-      font-size: 15px;
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
+    /* nav {
+        height: 10vw;
+    } */
 </style>
