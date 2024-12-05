@@ -165,15 +165,17 @@ const TechList = [
         <script>
             const scrollers = document.querySelectorAll(".scroller");
 
+            // some users may prefer reduced motion. therefore, only incorporate animation when they don't mind motion
             if (
                 !window.matchMedia("(prefers-reduced-motion: reduce)").matches
             ) {
                 addAnimation();
             }
 
+            // add animation into the scroller
             function addAnimation() {
-                scrollers.forEach((element) => {
-                    element.setAttribute("data-animated", "true");
+                scrollers.forEach((scroller) => {
+                    scroller.setAttribute("data-animated", "true");
 
                     const scrollerInner =
                         document.querySelector(".scroller_inner");
